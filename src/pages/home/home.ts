@@ -18,7 +18,7 @@ export class HomePage {
   tab3:any = JornadasPage
 
   constructor(public navCtrl: NavController) {
-	var a = 1
+
   }
 
 }
