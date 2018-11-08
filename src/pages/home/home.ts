@@ -15,7 +15,7 @@ export class HomePage {
 
   tab1:any = JugadoresPage
   tab2:any = EquiposPage
-  tab3:any = JornadasPage
+  tab3:any = EquiposPage
 
   constructor(public navCtrl: NavController) {
 
