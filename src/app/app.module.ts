@@ -5,9 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-
-import { LoginPage } from '../pages/login/login'
+import { HomePage, LoginPage, JornadasPage, EquiposPage, JugadoresPage } from '../pages/index.pages';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -18,7 +16,10 @@ import { AuthService } from '../services/auth.service';
   declarations: [
     MyApp,
 	HomePage,
-	LoginPage
+	LoginPage,
+	JornadasPage,
+	EquiposPage,
+	JugadoresPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,10 @@ import { AuthService } from '../services/auth.service';
   entryComponents: [
     MyApp,
 	HomePage,
-	LoginPage
+	LoginPage,
+	JornadasPage,
+	EquiposPage,
+	JugadoresPage
   ],
   providers: [
     StatusBar,
