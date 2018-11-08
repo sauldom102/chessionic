@@ -5,7 +5,7 @@ import { JugadoresPage, EquiposPage, JornadasPage } from '../index.pages';
 @Component({
   selector: 'page-home',
   template: `
-	<ion-tabs color="primary" selectedIndex="1">
+	<ion-tabs color="primary" selectedIndex="0">
 		<ion-tab tabIcon="people" tabTitle="Jugadores" [root]="tab1"></ion-tab>
 		<ion-tab tabIcon="contacts" tabTitle="Equipos" [root]="tab2"></ion-tab>
 		<ion-tab tabIcon="calendar" tabTitle="Jornadas" [root]="tab3"></ion-tab>
