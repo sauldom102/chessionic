@@ -13,6 +13,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import firebaseConfig from '../firebaseConfig';
 import { AuthService } from '../services/auth.service';
 import { JugadoresProvider } from '../providers/jugadores/jugadores';
+import { EquiposProvider } from '../providers/equipos/equipos';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { JugadoresProvider } from '../providers/jugadores/jugadores';
 	{provide: ErrorHandler, useClass: IonicErrorHandler},
 	AuthService,
 	AngularFireAuth,
-    JugadoresProvider
+    JugadoresProvider,
+    EquiposProvider
   ]
 })
 export class AppModule {}
