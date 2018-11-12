@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class JugadoresProvider {
 
   constructor() {
-    console.log('Hello JugadoresProvider Provider');
+    console.log('Hello Jugadores Provider Provider');
   }
 
 }

@@ -28,7 +28,7 @@ export class JugadoresPage {
   }
 
   añadirJugador(){
-   console.log('log añadirJugador');
+   console.log('log añadir Jugador');
     }
 
 }
