@@ -13,13 +13,21 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding >
+  <img src="assets/imgs/jugador.png">
 
     <ion-list>
         <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
           {{ item }}
         </button>  
       </ion-list>
+
+      <button ion-button>Añadir Jugador </button>
+
+      <ion-fab left bottom>
+        <button ion-fab color="secondary" ><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+
+      
 
 </ion-content>
