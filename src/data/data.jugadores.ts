@@ -1,18 +1,13 @@
-export const JUGADORES = [{
-    id: "0",
-    nombre: "Antonio",
-    apellidos: "Ruiz Ortega",
-    telefono: 956554433,
-    elo: 100,
-    partidas: 0,
-    pc: 0,
-    pf: 0,
-    ganadas: 0,
-    empatadas: 0,
-    perdidas: 0,
-    puntos: 0
-  },
-  {
+import { Jugador } from "../models/jugador.model";
+
+export const JUGADORES = [new Jugador(0,"Antonio", "Ruiz Ortega",956554433,100,0,0,0,0,0,0,0),
+        new Jugador(0,"Antonio", "Ruiz Ortega",956554433,100,0,0,0,0,0,0,0)]
+
+        
+ 
+
+
+/*new Jugador{
     id: "1",
     nombre: "Manuel",
     apellidos: "Garcia Fuentes",
@@ -26,6 +21,10 @@ export const JUGADORES = [{
     perdidas: 0,
     puntos: 0
   },
+
+
+
+  /*
   {
     id: "2",
     nombre: "Raimundo",
@@ -69,3 +68,4 @@ export const JUGADORES = [{
     puntos: 0
   }
 ];
+*/

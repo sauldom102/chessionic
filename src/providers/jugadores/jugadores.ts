@@ -17,11 +17,11 @@ export class JugadoresProvider {
     console.log('Hello Jugadores Provider Provider');
   }
 
-  agregar_jugadores(id:number,nombre: string, apellidos: string,telefono: number,partidas: number, 
+  agregar_jugadores(id:number,nombre: string, apellidos: string, elo:number,telefono: number,partidas: number, 
     pc: number,pf: number,ganadas: number, empatadas: number, perdidas: number,puntos: number){
     
     
-      let data = new Jugador(id,nombre,apellidos,telefono,partidas,pc,pf,ganadas,empatadas,perdidas,puntos)
+      let data = new Jugador(id,nombre,apellidos,elo,telefono,partidas,pc,pf,ganadas,empatadas,perdidas,puntos)
 
       this._jugadores.unshift(data)
   }
