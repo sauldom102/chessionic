@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+//Servicios
+import {JugadoresProvider} from "../../providers/jugadores/jugadores";
 
 
 /**
@@ -17,7 +19,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class JugadoresPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _jugadores:JugadoresProvider) {
     
   }
 

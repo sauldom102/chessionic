@@ -1,12 +1,12 @@
-import Jugadores from './jugador.model';
+import { Jugador } from './jugador.model';
 
 
 export default class Equipo{
     
     id:string
-    jugadores:Jugadores
+    jugadores:Jugador
 
-    constructor(id:string, jugadores:Jugadores){
+    constructor(id:string, jugadores:Jugador){
         this.id=id
         this.jugadores=jugadores
 

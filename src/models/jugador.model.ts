@@ -1,7 +1,5 @@
-import { JUGADORES } from '../data/data.jugadores';
 
-
-export default class Jugador{
+export class Jugador{
     
     
     id: number;
