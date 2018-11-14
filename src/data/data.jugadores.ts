@@ -1,71 +1,9 @@
 import { Jugador } from "../models/jugador.model";
 
-export const JUGADORES = [new Jugador(0,"Antonio", "Ruiz Ortega",956554433,100,0,0,0,0,0,0,0),
-        new Jugador(0,"Antonio", "Ruiz Ortega",956554433,100,0,0,0,0,0,0,0)]
+export const JUGADORESINICIALES = [new Jugador(0,"Antonio", "Ruiz Ortega",956554433,100,0,0,0,0,0,0,0),
+        new Jugador(1,"Manuel", "Perez Matos",956552267,200,0,0,0,0,0,0,0),
+        new Jugador(2,"Pedro", "Sanchez Ortega",956234876,50,0,0,0,0,0,0,0),
+        new Jugador(3,"Maria Dolores", "Cospedal",956554433,250,0,0,0,0,0,0,0),
+        new Jugador(4,"Rita", "Maestre",661509798,400,0,0,0,0,0,0,0)]
 
         
- 
-
-
-/*new Jugador{
-    id: "1",
-    nombre: "Manuel",
-    apellidos: "Garcia Fuentes",
-    telefono: 956223344,
-    elo: 200,
-    partidas: 0,
-    pc: 0,
-    pf: 0,
-    ganadas: 0,
-    empatadas: 0,
-    perdidas: 0,
-    puntos: 0
-  },
-
-
-
-  /*
-  {
-    id: "2",
-    nombre: "Raimundo",
-    apellidos: "Hernandez Souza",
-    telefono: 956223344,
-    elo: 50,
-    partidas: 0,
-    pc: 0,
-    pf: 0,
-    ganadas: 0,
-    empatadas: 0,
-    perdidas: 0,
-    puntos: 0
-  },
-  {
-    id: "3",
-    nombre: "Elena",
-    apellidos: "Alvarez Garcia",
-    telefono: 678342345,
-    elo: 250,
-    partidas: 0,
-    pc: 0,
-    pf: 0,
-    ganadas: 0,
-    empatadas: 0,
-    perdidas: 0,
-    puntos: 0
-  },
-  {
-    id: "4",
-    nombre: "Adriana",
-    apellidos: "Vargas Llosa",
-    telefono: 678984534,
-    elo: 400,
-    partidas: 0,
-    pc: 0,
-    pf: 0,
-    ganadas: 0,
-    empatadas: 0,
-    perdidas: 0,
-    puntos: 0
-  }
-];
-*/

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Jugador } from "../../models/jugador.model";
+import { JUGADORESINICIALES} from "../../data/data.jugadores"
 
 /*
   Generated class for the JugadoresProvider provider.
@@ -11,7 +12,7 @@ import { Jugador } from "../../models/jugador.model";
 @Injectable()
 export class JugadoresProvider {
 
-  private _jugadores:Jugador[]=[];
+  private _jugadores:Jugador[]=JUGADORESINICIALES;
 
   constructor() {
     console.log('Hello Jugadores Provider Provider');
