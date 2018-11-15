@@ -20,8 +20,8 @@
       <button ion-button (click)="listarJugadores()">Añadir Jugador </button>
 
       <ion-list>
-        <button ion-item *ngFor="let data of this._jugadoresProvider.cargar_jugadores(); let i=index" (click)="listarJugadores()">
-         Nombre: {{ data.nombre }} <br> Apellidos: {{ data.apellidos }} <br> {{i}}
+        <button ion-item *ngFor="let jugador of this._jugadoresProvider.cargar_jugadores(); let i=index" (click)="listarJugadores()">
+         Nombre: {{ jugador.nombre }} <br> Apellidos: {{ jugador.apellidos }} <br> {{i}}
         </button>  
       </ion-list>
 
