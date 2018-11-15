@@ -9,6 +9,10 @@ import { NuevaJornadaPage } from '../index.pages'
  * Ionic pages and navigation.
  */
 
+ export interface Jornada{
+	fecha: Date
+ }
+
 @IonicPage()
 @Component({
   selector: 'page-jornadas',
@@ -16,15 +20,23 @@ import { NuevaJornadaPage } from '../index.pages'
 })
 export class JornadasPage {
 
+  jornadas:Jornada[] = []
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad JornadasPage');
+	console.log('ionViewDidLoad JornadasPage');
   }
 
   modalNewJornada(){
 	let modalNewJornada = this.modalCtrl.create(NuevaJornadaPage)
+
+	modalNewJornada.onDidDismiss(data => {
+		if ( data )
+			this.jornadas.push(data)
+	})
+
 	modalNewJornada.present()
   }
 

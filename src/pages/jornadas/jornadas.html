@@ -6,14 +6,26 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Jornadas</ion-title>
+  <ion-navbar color="primary">
+	<ion-title>Jornadas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+	<ion-list>
+		<ion-card class="jornada-card" *ngFor="let jornada of jornadas">
+			<ion-card-header>
+				{{ jornada.fecha }}
+			</ion-card-header>
+			
+			<ion-card-content>
+				<!-- Add card content here! -->
+			</ion-card-content>
+		</ion-card>
+	</ion-list>
+
 	<ion-fab right bottom>
 		<button ion-fab color="secondary" (click)="modalNewJornada()"><ion-icon name="add"></ion-icon></button>
 	  </ion-fab>
