@@ -17,7 +17,15 @@ export default class Equipo{
 	}
 
 	addJugadorById(jugadorId:number){
-		this.addJugador(new JugadoresProvider().cargar_jugadores().find(jugador => jugador.id == jugadorId))
+		this.addJugador(new JugadoresProvider().getById(jugadorId))
+	}
+
+	deleteJugadorById(jugadorId:number){
+		this.jugadores = this.jugadores.filter(jugador => jugador.id != jugadorId)
+	}
+
+	deleteJugador(jugador:Jugador){
+		this.deleteJugadorById(jugador.id)
 	}
 }
 
