@@ -31,4 +31,9 @@ export class JugadoresProvider {
     return this._jugadores
 
   }
+
+
+  getById(jugadorId){
+    return this._jugadores.find(jugador => jugador.id == jugadorId)
+  }
 }
