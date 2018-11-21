@@ -12,7 +12,8 @@ import { JUGADORESINICIALES} from "../../data/data.jugadores"
 @Injectable()
 export class JugadoresProvider {
 
-  private _jugadores:Jugador[]=JUGADORESINICIALES;
+  public _jugadores:Jugador[]=JUGADORESINICIALES;
+  
 
   constructor() {
     console.log('Hello Jugadores Provider Provider');
@@ -35,5 +36,9 @@ export class JugadoresProvider {
 
   getById(jugadorId){
     return this._jugadores.find(jugador => jugador.id == jugadorId)
+  }
+
+  addJugador(Jugador){
+    this._jugadores.unshift(Jugador)
   }
 }

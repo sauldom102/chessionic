@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 //Servicios
-import {JugadoresProvider} from "../../providers/jugadores/jugadores";
+
+import { Jugador } from "../../models/jugador.model";
+import { JugadoresAddPage } from '../jugadores-add/jugadores-add';
+import { JugadoresListPage } from '../jugadores-list/jugadores-list';
 
 
 
@@ -23,12 +26,13 @@ export class JugadoresPage {
 
 
 
+  jugadoraddboton:any=JugadoresAddPage //Variable para adjuntar en navpush del boton html
+  jugadorlistboton:any=JugadoresListPage
  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _jugadoresProvider:JugadoresProvider) {
-    this._jugadoresProvider.agregar_jugadores(10,"AMOR", "AMOR",956234876,50,0,0,0,0,0,0,0)
-    this._jugadoresProvider.agregar_jugadores(12,"AMORCITO", "AMORCITO",956234876,50,0,0,0,0,0,0,0)
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, ) {
+    
+    
   }
 
   ionViewDidLoad() {
@@ -37,15 +41,11 @@ export class JugadoresPage {
 
   }
 
-  añadirJugador(){
-   console.log('log añadir Jugador');
-    }
 
+    
 
+    
+    
    
-
-    listarJugadores(){
-     console.log(this._jugadoresProvider.cargar_jugadores())
-    }
 
 }
