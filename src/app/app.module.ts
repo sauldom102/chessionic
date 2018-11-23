@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage, LoginPage, JornadasPage, EquiposPage, JugadoresPage, JugadoresAddPage, JugadoresListPage } from '../pages/index.pages';
+import { HomePage, LoginPage, JornadasPage, EquiposPage, EquiposAddPage, JugadoresPage, JugadoresAddPage, JugadoresListPage, JugadoresDetailsPage } from '../pages/index.pages';
 import { NuevaJornadaPage } from '../pages/nueva-jornada/nueva-jornada'
 
 import { AngularFireModule } from 'angularfire2';
@@ -22,9 +22,11 @@ import { EquiposProvider } from '../providers/equipos/equipos';
 	LoginPage,
 	JornadasPage,
 	EquiposPage,
+	EquiposAddPage,
 	JugadoresPage,
 	JugadoresAddPage,
 	JugadoresListPage,
+	JugadoresDetailsPage,
 	NuevaJornadaPage
   ],
   imports: [
@@ -39,9 +41,11 @@ import { EquiposProvider } from '../providers/equipos/equipos';
 	LoginPage,
 	JornadasPage,
 	EquiposPage,
+	EquiposAddPage,
 	JugadoresPage,
 	JugadoresAddPage,
 	JugadoresListPage,
+	JugadoresDetailsPage,
 	NuevaJornadaPage
   ],
   providers: [

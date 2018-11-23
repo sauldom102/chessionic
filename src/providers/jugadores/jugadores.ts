@@ -3,12 +3,7 @@ import { Injectable } from '@angular/core';
 import { Jugador } from "../../models/jugador.model";
 import { JUGADORESINICIALES} from "../../data/data.jugadores"
 
-/*
-  Generated class for the JugadoresProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class JugadoresProvider {
 
