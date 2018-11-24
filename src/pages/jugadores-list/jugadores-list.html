@@ -19,7 +19,7 @@
 
     <ion-list>
         <ion-item ion-item *ngFor="let jugador of this._jugadoresProvider.cargar_jugadores(); let i=index" (click)="listarJugadores()">
-         Nombre: {{ jugador.nombre }} <br> Apellidos: {{ jugador.apellidos }}<br> ELO: {{ jugador.elo }} <br> Index: {{i}} <br>
+         Nombre: {{ jugador.nombre }} {{ jugador.apellidos }}<br> ELO: {{ jugador.elo }} <br> Index: {{i}} <br>
          
             <button ion-button color="danger" (click)="borrarJugador(i)" >
             
@@ -27,7 +27,9 @@
             Borrar
             </button>
 
-            <button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{'i':i}"> EDITAR </button>
+            <button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{'i':i}"> 
+            <ion-icon name="build"></ion-icon>  
+            EDITAR </button>
             
         </ion-item>  
       </ion-list>
