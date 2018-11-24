@@ -9,7 +9,7 @@ import { JUGADORESINICIALES } from '../../data/data.jugadores'
 @Injectable()
 export class EquiposProvider {
 
-  _equipos:Equipo[]= []
+  private _equipos:Equipo[]= []
 
   constructor() {
     console.log('Hello EquiposProvider Provider');

@@ -39,7 +39,8 @@ export class JornadasPage {
 
   goToJornadaDetails(idx:number){
 	this.navCtrl.push(JornadasDetailPage, {
-		jornada: this.jornadas[idx]
+		jornada: this.jornadas[idx],
+		idx
 	})
   }
 

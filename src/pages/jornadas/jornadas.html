@@ -26,7 +26,7 @@
 			</ion-card-header>
 			
 			<ion-card-content>
-				Se juega el día {{ jornada.fecha }} {{ jornada.local ? "en casa" : "fuera" }}
+				Se juega el día {{ jornada.getFormattedDate() }} {{ jornada.local ? "en casa" : "fuera" }}
 			</ion-card-content>
 		</ion-card>
 	</ion-list>

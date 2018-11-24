@@ -20,4 +20,6 @@ export class Jugador{
 		this.puntos=puntos
 
 	}
+
+	getFullName = () => `${this.nombre} ${this.apellidos}`
 }

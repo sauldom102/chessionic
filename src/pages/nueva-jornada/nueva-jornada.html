@@ -22,7 +22,7 @@
   <form [formGroup]="jornadaForm" (ngSubmit)="submitJornada(jornadaForm.value)">
     <ion-item [ngClass]="{'error-border':!jornadaForm.controls.fecha.valid && jornadaForm.controls.fecha.touched}">
       <ion-label fixed>Fecha</ion-label>
-      <ion-input type="date" formControlName="fecha" required></ion-input>
+      <ion-datetime displayFormat="DD/MM/YYYY" formControlName="fecha" required></ion-datetime>
 	</ion-item>
 	<p *ngIf="jornadaForm.controls.fecha.hasError('required') && jornadaForm.controls.fecha.touched" class="error">Debes introducir una fecha</p>
 	

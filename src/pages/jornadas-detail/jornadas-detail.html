@@ -6,13 +6,36 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>jornadas-detail</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Jornada {{ idx + 1 }}</ion-title>
+
+	<ion-buttons end>
+      <button ion-button icon-only (click)="addPartida()">
+		Nueva partida
+		<ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+	<div padding>
+		<h1>Estadísticas</h1>
 
+		<p>Partidas ganadas</p>
+		<p>Partidas perdidas</p>
+		<p>Partidas empatadas</p>
+
+		<h1>Partidas</h1>
+	</div>
+	
+	<ion-list>
+		<ion-card *ngFor="let partida of this.jornada.partidas">
+			<ion-card-header>
+				{{ partida.jugador.getFullName() }} contra desconocido
+			</ion-card-header>
+		</ion-card>
+	</ion-list>
 </ion-content>

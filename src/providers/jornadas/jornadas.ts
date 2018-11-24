@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import Jornada from '../../models/jornada.model';
+import { EquiposProvider } from '../equipos/equipos';
 
 /*
   Generated class for the JornadasProvider provider.
@@ -13,8 +14,9 @@ export class JornadasProvider {
 
   private _jornadas:Jornada[] = []
 
-  constructor() {
-    console.log('Hello JornadasProvider Provider');
+  constructor(private _equiposProvider: EquiposProvider) {
+	console.log('Hello JornadasProvider Provider');
+	this.addJornada(new Jornada(new Date(), true, this._equiposProvider.cargar_equipos()[0]))
   }
   
   addJornada(jornada:Jornada){

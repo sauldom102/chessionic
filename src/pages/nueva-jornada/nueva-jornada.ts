@@ -46,8 +46,8 @@ export class NuevaJornadaPage {
 	  Object.keys(this.jornadaForm.controls).forEach(k => {
 		  data[k] = this.jornadaForm.controls[k].value
 	  })
-	  
-	  let jornada = new Jornada(data['fecha'], data['local'], data['equipo'])
+
+	  let jornada = new Jornada(new Date(data['fecha']), data['local'], data['equipo'])
 	  this._jornadasProvider.addJornada(jornada)
 
 	  this.exit()
