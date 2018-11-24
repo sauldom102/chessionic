@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Jugador } from "../../models/jugador.model";
 
 //Servicios
-import {JugadoresProvider} from "../jugadores/jugadores";
+import { JUGADORESINICIALES } from '../../data/data.jugadores'
 
 
 @Injectable()
@@ -11,9 +11,13 @@ export class EquipoProvider {
 
   _equipo:Jugador[]= []
 
-  constructor(private _jugadoresProvider:JugadoresProvider) {
+  constructor() {
     console.log('Hello EquiposProvider Provider');
-    this._equipo = this._jugadoresProvider.cargar_jugadores().slice(0, 4)
+    this._equipo = JUGADORESINICIALES.slice(0, 4)
+  }
+
+  deleteJugadorById(jugadorId: number){
+	this._equipo = this._equipo.filter(jugador => jugador.id != jugadorId)
   }
 
   cargar_equipo(){

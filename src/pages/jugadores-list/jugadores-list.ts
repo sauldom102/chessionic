@@ -26,8 +26,8 @@ export class JugadoresListPage {
     console.log(this._jugadoresProvider.cargar_jugadores())
    }
 
-   borrarJugador( idx:number ){ 
-    this._jugadoresProvider._jugadores.splice( idx, 1 );
+   borrarJugador( id:number ){ 
+	this._jugadoresProvider.deleteById(id)
    }
 
 }
