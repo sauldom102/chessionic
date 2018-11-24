@@ -26,9 +26,5 @@ export class EquiposPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EquiposPage');
   }
-
-
-
   
-
 }

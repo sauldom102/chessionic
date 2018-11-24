@@ -4,11 +4,8 @@ import { JugadoresProvider } from '../providers/jugadores/jugadores'
 
 export default class Equipo{
     
-    id:string
-    jugadores:Jugador[]
-
-    constructor(id:string, jugadores:Jugador[]){
-        this.id=id
+    constructor(public nombre:string, public jugadores:Jugador[]){
+        this.nombre = nombre
         this.jugadores=jugadores
 	}
 
