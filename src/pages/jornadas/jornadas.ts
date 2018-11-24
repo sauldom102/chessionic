@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
-import { NuevaJornadaPage } from '../index.pages'
+import { NuevaJornadaPage, JornadasDetailPage } from '../index.pages'
+import { JornadasProvider } from '../../providers/jornadas/jornadas';
 /**
  * Generated class for the JornadasPage page.
  *
@@ -20,9 +21,11 @@ import { NuevaJornadaPage } from '../index.pages'
 })
 export class JornadasPage {
 
-  jornadas:Jornada[] = []
+  jornadas:Jornada[]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
+	private _jornadasProvider: JornadasProvider) {
+		this.jornadas = this._jornadasProvider.getJornadas()
   }
 
   ionViewDidLoad() {
@@ -31,13 +34,13 @@ export class JornadasPage {
 
   modalNewJornada(){
 	let modalNewJornada = this.modalCtrl.create(NuevaJornadaPage)
-
-	modalNewJornada.onDidDismiss(data => {
-		if ( data )
-			this.jornadas.push(data)
-	})
-
 	modalNewJornada.present()
+  }
+
+  goToJornadaDetails(idx:number){
+	this.navCtrl.push(JornadasDetailPage, {
+		jornada: this.jornadas[idx]
+	})
   }
 
 }

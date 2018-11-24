@@ -14,15 +14,19 @@
 
 
 <ion-content>
-		<img src="assets/imgs/jornadas.png"><br>
+	<div class="header-img-container">
+		<img class="header-img" src="assets/imgs/jornadas.png">
+	</div>
+	
+
 	<ion-list>
-		<ion-card class="jornada-card" *ngFor="let jornada of jornadas">
+		<ion-card tappable class="jornada-card" *ngFor="let jornada of jornadas; let i = index" (click)="goToJornadaDetails(i)">
 			<ion-card-header>
-				{{ jornada.fecha }}
+				Jornada {{ i + 1 }}
 			</ion-card-header>
 			
 			<ion-card-content>
-				<!-- Add card content here! -->
+				Se juega el día {{ jornada.fecha }} {{ jornada.local ? "en casa" : "fuera" }}
 			</ion-card-content>
 		</ion-card>
 	</ion-list>

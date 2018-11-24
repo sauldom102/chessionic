@@ -27,9 +27,14 @@
 	<p *ngIf="jornadaForm.controls.fecha.hasError('required') && jornadaForm.controls.fecha.touched" class="error">Debes introducir una fecha</p>
 	
 	<ion-item>
+		<ion-label>¿En casa?</ion-label>
+		<ion-checkbox formControlName="local" required></ion-checkbox>
+	</ion-item>
+
+	<ion-item>
 		<ion-label>Equipo</ion-label>
 		<ion-select formControlName="equipo" required>
-			<ion-option value="titular">Female</ion-option>
+			<ion-option *ngFor="let equipo of this.equipos" value="{{ equipo.nombre }}">{{ equipo.nombre }}</ion-option>
 		</ion-select>
 	</ion-item>
 	

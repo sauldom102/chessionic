@@ -30530,9 +30530,23 @@ ion-navbar.toolbar {
   background: #FFFAFA;
 }
 
+page-jornadas .header-img-container {
+  max-height: 250px;
+  overflow: hidden;
+}
+
+page-jornadas .header-img-container .header-img {
+  -webkit-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+
 page-jornadas ion-fab {
   margin-bottom: 15px;
   margin-right: 10px;
+}
+
+page-jornadas ion-card ion-card-header {
+  font-weight: bold;
 }
 
 page-jugadores ion-fab {

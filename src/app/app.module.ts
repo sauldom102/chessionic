@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage, LoginPage, JornadasPage, EquiposPage, EquiposAddPage, JugadoresPage, JugadoresAddPage, JugadoresListPage, JugadoresDetailsPage } from '../pages/index.pages';
+import { HomePage, LoginPage, JornadasPage, EquiposPage, EquiposAddPage, JugadoresPage, JugadoresAddPage, JugadoresListPage, JugadoresDetailsPage, JornadasDetailPage } from '../pages/index.pages';
 import { NuevaJornadaPage } from '../pages/nueva-jornada/nueva-jornada'
 
 import { AngularFireModule } from 'angularfire2';
@@ -14,6 +14,7 @@ import firebaseConfig from '../firebaseConfig';
 import { AuthService } from '../services/auth.service';
 import { JugadoresProvider } from '../providers/jugadores/jugadores';
 import { EquiposProvider } from '../providers/equipos/equipos';
+import { JornadasProvider } from '../providers/jornadas/jornadas';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EquiposProvider } from '../providers/equipos/equipos';
 	JugadoresAddPage,
 	JugadoresListPage,
 	JugadoresDetailsPage,
-	NuevaJornadaPage
+	NuevaJornadaPage,
+	JornadasDetailPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { EquiposProvider } from '../providers/equipos/equipos';
 	JugadoresAddPage,
 	JugadoresListPage,
 	JugadoresDetailsPage,
-	NuevaJornadaPage
+	NuevaJornadaPage,
+	JornadasDetailPage
   ],
   providers: [
     StatusBar,
@@ -55,7 +58,8 @@ import { EquiposProvider } from '../providers/equipos/equipos';
 	AuthService,
 	AngularFireAuth,
     JugadoresProvider,
-    EquiposProvider
+    EquiposProvider,
+    JornadasProvider
   ]
 })
 export class AppModule {}

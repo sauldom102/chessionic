@@ -1,6 +1,21 @@
 page-jornadas {
+	.header-img-container{
+		max-height: 250px;
+		overflow: hidden;
+		
+		.header-img{
+			transform: translateY(-50px);
+		}
+	}
+
 	ion-fab{
 		margin-bottom: 15px;
 		margin-right: 10px;
+	}
+
+	ion-card{
+		ion-card-header{
+			font-weight: bold;
+		}
 	}
 }
