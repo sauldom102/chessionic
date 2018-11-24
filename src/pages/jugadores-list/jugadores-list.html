@@ -15,11 +15,11 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
     <ion-list>
         <ion-item ion-item *ngFor="let jugador of this._jugadoresProvider.cargar_jugadores(); let i=index" (click)="listarJugadores()">
-         Nombre: {{ jugador.nombre }} {{ jugador.apellidos }}<br> ELO: {{ jugador.elo }} <br> Index: {{i}} <br>
+         Nombre: {{ jugador.nombre }} {{ jugador.apellidos }}<br> ELO: {{ jugador.elo }} <br> Tfno: {{ jugador.telefono }} <br>
          
             <button ion-button color="danger" (click)="borrarJugador(i)" >
             

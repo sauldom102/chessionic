@@ -15,14 +15,14 @@
 
 <ion-content padding>
 
-    <!-- <ion-list>
+    <ion-list>
         <ion-item ion-item>
-         Nombre: {{ _jugadoresProvider._jugadores[indexjugadores].nombre}} {{ _jugadoresProvider._jugadores[indexjugadores].apellidos }} <br>
-         ELO: {{ _jugadoresProvider._jugadores[indexjugadores].elo }} Puntos: {{ _jugadoresProvider._jugadores[indexjugadores].puntos }} Telefono: {{ _jugadoresProvider._jugadores[indexjugadores].telefono }} <br> 
-         Partidas: {{ _jugadoresProvider._jugadores[indexjugadores].partidas }} PC: {{ _jugadoresProvider._jugadores[indexjugadores].pc }}  PF: {{ _jugadoresProvider._jugadores[indexjugadores].pf }} <br> 
-         Ganadas: {{ _jugadoresProvider._jugadores[indexjugadores].ganadas }} Empatadas: {{ _jugadoresProvider._jugadores[indexjugadores].empatadas }} Perdidas: {{ _jugadoresProvider._jugadores[indexjugadores].perdidas }} <br> 
+         Nombre: {{ jugador.nombre}} {{ jugador.apellidos }} <br>
+         ELO: {{ jugador.elo }} Puntos: {{ jugador.puntos }} Telefono: {{ jugador.telefono }} <br> 
+         Partidas: {{ jugador.partidas }} PC: {{ jugador.pc }}  PF: {{ jugador.pf }} <br> 
+         Ganadas: {{ jugador.ganadas }} Empatadas: {{ jugador.empatadas }} Perdidas: {{ jugador.perdidas }} <br> 
         </ion-item>  
-      </ion-list> -->
+      </ion-list>
 
       <form [formGroup]="jugadorForm" (ngSubmit)="editJugador(jugadorForm.value)">
         
@@ -42,38 +42,6 @@
           <ion-item>
               <ion-label>Telefono</ion-label>
               <ion-input type="number" formControlName="telefono" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>ELO</ion-label>
-              <ion-input type="number" formControlName="elo" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Partidas Jugadas</ion-label>
-              <ion-input type="number" formControlName="partidas" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Partidos Local</ion-label>
-              <ion-input type="number" formControlName="pc" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Partidas Fuera</ion-label>
-              <ion-input type="number" formControlName="pf" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Partidas Ganadas</ion-label>
-              <ion-input type="number" formControlName="ganadas" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Partidas Empatadas</ion-label>
-              <ion-input type="number" formControlName="empatadas" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Partidas Perdidas</ion-label>
-              <ion-input type="number" formControlName="perdidas" required></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Puntuacion</ion-label>
-              <ion-input type="number" formControlName="puntos" required></ion-input>
           </ion-item>
   
           <button ion-button type="submit" color="yellow"><ion-icon name="build"></ion-icon>  EDITAR JUGADOR</button>
