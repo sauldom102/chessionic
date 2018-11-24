@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //Servicios
-import {EquipoProvider} from "../../providers/equipo/equipo";
+import {EquiposProvider} from "../../providers/equipos/equipos";
 import {EquiposAddPage} from "../equipos-add/equipos-add"
 
 /**
@@ -13,14 +13,14 @@ import {EquiposAddPage} from "../equipos-add/equipos-add"
 
 @IonicPage()
 @Component({
-  selector: 'page-equipo',
-  templateUrl: 'equipo.html',
+  selector: 'page-equipos',
+  templateUrl: 'equipos.html',
 })
-export class EquipoPage {
+export class EquiposPage {
 
   hacerequipoboton:any=EquiposAddPage //Variable para adjuntar en navpush del boton html
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _equipoProvider:EquipoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _equiposProvider:EquiposProvider) {
   }
 
   ionViewDidLoad() {

@@ -7,7 +7,7 @@ import { JUGADORESINICIALES } from '../../data/data.jugadores'
 
 
 @Injectable()
-export class EquipoProvider {
+export class EquiposProvider {
 
   _equipo:Jugador[]= []
 

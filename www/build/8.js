@@ -5,10 +5,10 @@ webpackJsonp([8],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EquipoPageModule", function() { return EquipoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EquiposAddPageModule", function() { return EquiposAddPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__equipo__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__equipos_add__ = __webpack_require__(153);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EquipoPageModule = /** @class */ (function () {
-    function EquipoPageModule() {
+var EquiposAddPageModule = /** @class */ (function () {
+    function EquiposAddPageModule() {
     }
-    EquipoPageModule = __decorate([
+    EquiposAddPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__equipo__["a" /* EquipoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__equipos_add__["a" /* EquiposAddPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__equipo__["a" /* EquipoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__equipos_add__["a" /* EquiposAddPage */]),
             ],
         })
-    ], EquipoPageModule);
-    return EquipoPageModule;
+    ], EquiposAddPageModule);
+    return EquiposAddPageModule;
 }());
 
-//# sourceMappingURL=equipo.module.js.map
+//# sourceMappingURL=equipos-add.module.js.map
 
 /***/ })
 

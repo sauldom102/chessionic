@@ -18,7 +18,7 @@
 
     <button ion-button color="secondary" [navPush] = "hacerequipoboton"> HACER EQUIPO </button>
 
-    <ion-item ion-item *ngFor="let equipo of this._equipoProvider.cargar_equipo(); let i=index">
+    <ion-item ion-item *ngFor="let equipo of this._equiposProvider.cargar_equipo(); let i=index">
         Nombre: {{ equipo.nombre }} {{ equipo.apellidos }}<br> ELO: {{ equipo.elo }} <br> Index: {{i}} <br>
         
            
