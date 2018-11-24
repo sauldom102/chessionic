@@ -14,10 +14,6 @@ export class JugadoresProvider {
     console.log('Hello Jugadores Provider Provider');
   }
 
-  agregar_jugador(jugador:Jugador){
-      this._jugadores.unshift(jugador)
-  }
-
   cargar_jugadores(){
     return this._jugadores
   }

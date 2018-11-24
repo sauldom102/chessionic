@@ -173,9 +173,10 @@ var JugadoresPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JugadoresAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_jugadores_jugadores__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_jugador_model__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__jugadores_jugadores__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_jugador_model__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__jugadores_jugadores__ = __webpack_require__(154);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -187,6 +188,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 //Servicios
 
 
@@ -196,42 +198,29 @@ var JugadoresAddPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this._jugadoresProvider = _jugadoresProvider;
+        this.addJugadorForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]().group({
+            id: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
+            nombre: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
+            apellidos: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
+            telefono: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
+        });
     }
     JugadoresAddPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad JugadoresAddPage');
     };
     JugadoresAddPage.prototype.addJugador = function () {
-        var jugador;
-        // PARA PROBAR GUARDADO jugador=new Jugador(99,"TEST", "TEST",1,2,3,4,5,6,7,8,9);
-        jugador = new __WEBPACK_IMPORTED_MODULE_3__models_jugador_model__["a" /* Jugador */](null, null, null, null, null, null, null, null, null, null, null, null);
-        jugador.id = this.id;
-        jugador.nombre = this.nombre;
-        jugador.apellidos = this.apellidos;
-        jugador.telefono = this.telefono;
-        jugador.elo = this.elo;
-        jugador.partidas = this.partidas;
-        jugador.pc = this.pc;
-        jugador.pf = this.pf;
-        jugador.ganadas = this.ganadas;
-        jugador.empatadas = this.empatadas;
-        jugador.perdidas = this.perdidas;
-        jugador.puntos = this.puntos;
-        console.log("POR AQUI ESTOY");
-        console.log(this._jugadoresProvider._jugadores);
-        //PARA EVITAR QUE SE GUARDE EL JUGADOR Y PASE A LA PANTALLA PRINCIPAL SI NO ESCRIBES NADA
-        if (jugador.id != null || jugador.nombre != null || jugador.apellidos != null || jugador.telefono != null || jugador.elo != null || jugador.partidas != null
-            || jugador.pc != null || jugador.pf != null || jugador.ganadas != null || jugador.empatadas != null || jugador.perdidas != null || jugador.puntos != null) {
-            this._jugadoresProvider.addJugador(jugador);
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__jugadores_jugadores__["a" /* JugadoresPage */]);
-        }
+        var jugador = new __WEBPACK_IMPORTED_MODULE_4__models_jugador_model__["a" /* Jugador */](this.addJugadorForm.controls['id'].value, this.addJugadorForm.controls['nombre'].value, this.addJugadorForm.controls['apellidos'].value, this.addJugadorForm.controls['telefono'].value, 0, 0, 0, 0, 0, 0, 0, 0);
+        this._jugadoresProvider.addJugador(jugador);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__jugadores_jugadores__["a" /* JugadoresPage */]);
     };
     JugadoresAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jugadores-add',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-add/jugadores-add.html"*/'<!--\n  Generated template for the JugadoresAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Añadir Jugador</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    \n\n    <form (ngSubmit)="addJugador()">\n        \n        <ion-item>\n            \n          <ion-label>ID</ion-label>\n          <ion-input type="number" [(ngModel)]="id" name="id"></ion-input>\n        </ion-item>\n        \n        <ion-item>\n          <ion-label>Nombre</ion-label>\n          <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Apellidos</ion-label>\n            <ion-input type="text" [(ngModel)]="apellidos" name="apellidos"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Telefono</ion-label>\n            <ion-input type="number" [(ngModel)]="telefono" name="telefono"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>ELO</ion-label>\n            <ion-input type="number" [(ngModel)]="elo" name="elo"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Partidas Jugadas</ion-label>\n            <ion-input type="number" [(ngModel)]="partidas" name="partidas"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Partidos Local</ion-label>\n            <ion-input type="number" [(ngModel)]="pc" name="pc"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Partidas Fuera</ion-label>\n            <ion-input type="number" [(ngModel)]="pf" name="pf"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Partidas Ganadas</ion-label>\n            <ion-input type="number" [(ngModel)]="ganadas" name="ganadas"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Partidas Empatadas</ion-label>\n            <ion-input type="number" [(ngModel)]="empatadas" name="empatadas"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Partidas Perdidas</ion-label>\n            <ion-input type="number" [(ngModel)]="perdidas" name="perdidas"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Puntuacion</ion-label>\n            <ion-input type="number" [(ngModel)]="puntos" name="puntos"></ion-input>\n        </ion-item>\n\n        <button ion-button type="submit" color="green">AÑADIR JUGADOR</button>\n      </form>\n\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-add/jugadores-add.html"*/,
+            selector: 'page-jugadores-add',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-add/jugadores-add.html"*/'<!--\n  Generated template for the JugadoresAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Añadir Jugador</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <form [formGroup]="addJugadorForm" (ngSubmit)="addJugador(addJugadorForm.value)">\n        \n        <ion-item>\n          <ion-label>ID</ion-label>\n          <ion-input type="number" formControlName="id"></ion-input>\n        </ion-item>\n        \n        <ion-item>\n          <ion-label>Nombre</ion-label>\n          <ion-input type="text" formControlName="nombre"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Apellidos</ion-label>\n            <ion-input type="text" formControlName="apellidos"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Telefono</ion-label>\n            <ion-input type="number" formControlName="telefono"></ion-input>\n        </ion-item>\n\n        <button ion-button type="submit" color="green">AÑADIR JUGADOR</button>\n      </form>\n\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-add/jugadores-add.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_jugadores_jugadores__["a" /* JugadoresProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__["a" /* JugadoresProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__["a" /* JugadoresProvider */]) === "function" && _c || Object])
     ], JugadoresAddPage);
     return JugadoresAddPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=jugadores-add.js.map
@@ -958,9 +947,6 @@ var JugadoresProvider = /** @class */ (function () {
         this._jugadores = __WEBPACK_IMPORTED_MODULE_1__data_data_jugadores__["a" /* JUGADORESINICIALES */];
         console.log('Hello Jugadores Provider Provider');
     }
-    JugadoresProvider.prototype.agregar_jugador = function (jugador) {
-        this._jugadores.unshift(jugador);
-    };
     JugadoresProvider.prototype.cargar_jugadores = function () {
         return this._jugadores;
     };
