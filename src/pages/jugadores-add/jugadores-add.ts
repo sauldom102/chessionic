@@ -35,8 +35,7 @@ export class JugadoresAddPage {
 		this.addJugadorForm.controls['id'].value,
 		this.addJugadorForm.controls['nombre'].value,
 		this.addJugadorForm.controls['apellidos'].value,
-		this.addJugadorForm.controls['telefono'].value,
-		0, 0, 0, 0, 0, 0, 0, 0
+		this.addJugadorForm.controls['telefono'].value
 	)
 	this._jugadoresProvider.addJugador(jugador)
 	this.navCtrl.push(JugadoresPage)

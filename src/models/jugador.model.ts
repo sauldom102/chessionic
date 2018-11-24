@@ -1,39 +1,23 @@
 
 export class Jugador{
     
-    
-    id: number;
-    nombre: string;
-    apellidos: string;
-    telefono: number;
-    elo: number;
-    partidas: number;
-    pc: number;
-    pf: number;
-    ganadas: number;
-    empatadas: number;
-    perdidas: number;
-    puntos: number;
+	constructor(public id:number, public nombre: string, public apellidos: string, public telefono: number, 
+		public elo:number = 0, public partidas: number = 0, public pc: number = 0, public pf: number = 0, 
+		public ganadas: number = 0, public empatadas: number = 0, public perdidas: number = 0,
+		public puntos: number = 0){
 
+		this.id=id
+		this.nombre=nombre
+		this.apellidos=apellidos
+		this.telefono=telefono
+		this.elo=elo
+		this.partidas=partidas
+		this.pc=pc
+		this.pf=pf
+		this.ganadas=ganadas
+		this.empatadas=empatadas
+		this.perdidas=perdidas
+		this.puntos=puntos
 
-
-    constructor(id:number,nombre: string, apellidos: string, elo:number, telefono: number,partidas: number, 
-        pc: number,pf: number,ganadas: number, empatadas: number, perdidas: number,puntos: number){
-       
-            this.id=id
-            this.nombre=nombre
-            this.apellidos=apellidos
-            this.elo=elo
-            this.telefono=telefono
-            this.partidas=partidas
-            this.pc=pc
-            this.pf=pf
-            this.ganadas=ganadas
-            this.empatadas=empatadas
-            this.perdidas=perdidas
-            this.puntos=puntos
-
-		}
-       
-
+	}
 }
