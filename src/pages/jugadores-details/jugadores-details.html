@@ -6,13 +6,25 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>jugadores-details</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Edición</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-list>
+        <ion-item ion-item>
+         Nombre: {{ _jugadoresProvider._jugadores[indexjugadores].nombre}} <br> 
+         Apellidos: {{ _jugadoresProvider._jugadores[indexjugadores].apellidos }}<br> 
+         ELO: {{ _jugadoresProvider._jugadores[indexjugadores].elo }} <br> 
+         
+         
+           
+            
+        </ion-item>  
+      </ion-list>
 
 </ion-content>

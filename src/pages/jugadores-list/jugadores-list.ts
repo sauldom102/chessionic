@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 //Servicios
 import {JugadoresProvider} from "../../providers/jugadores/jugadores";
+import { JugadoresDetailsPage } from '../jugadores-details/jugadores-details';
 
 
 @IonicPage()
@@ -11,6 +12,8 @@ import {JugadoresProvider} from "../../providers/jugadores/jugadores";
   templateUrl: 'jugadores-list.html',
 })
 export class JugadoresListPage {
+
+  jugadordetailsboton:any=JugadoresDetailsPage
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _jugadoresProvider:JugadoresProvider) {
    //PRUEBA INSERCION this._jugadoresProvider.agregar_jugadores(10,"AMOR", "AMOR",956234876,50,0,0,0,0,0,0,0); 
