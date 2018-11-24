@@ -1,0 +1,76 @@
+<!--
+  Generated template for the JugadoresAddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Añadir Jugador</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    
+
+    <form (ngSubmit)="addJugador()">
+        
+        <ion-item>
+            
+          <ion-label>ID</ion-label>
+          <ion-input type="number" [(ngModel)]="id" name="id"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Apellidos</ion-label>
+            <ion-input type="text" [(ngModel)]="apellidos" name="apellidos"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Telefono</ion-label>
+            <ion-input type="number" [(ngModel)]="telefono" name="telefono"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>ELO</ion-label>
+            <ion-input type="number" [(ngModel)]="elo" name="elo"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Partidas Jugadas</ion-label>
+            <ion-input type="number" [(ngModel)]="partidas" name="partidas"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Partidos Local</ion-label>
+            <ion-input type="number" [(ngModel)]="pc" name="pc"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Partidas Fuera</ion-label>
+            <ion-input type="number" [(ngModel)]="pf" name="pf"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Partidas Ganadas</ion-label>
+            <ion-input type="number" [(ngModel)]="ganadas" name="ganadas"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Partidas Empatadas</ion-label>
+            <ion-input type="number" [(ngModel)]="empatadas" name="empatadas"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Partidas Perdidas</ion-label>
+            <ion-input type="number" [(ngModel)]="perdidas" name="perdidas"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Puntuacion</ion-label>
+            <ion-input type="number" [(ngModel)]="puntos" name="puntos"></ion-input>
+        </ion-item>
+
+        <button ion-button type="submit" color="green">AÑADIR JUGADOR</button>
+      </form>
+
+</ion-content>

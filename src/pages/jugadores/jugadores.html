@@ -6,32 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Jugadores</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content >
-  <img src="assets/imgs/jugador.png">
-
-   
-      <button ion-button (click)="listarJugadores()">Añadir Jugador </button>
-
-      <ion-list>
-        <button ion-item *ngFor="let jugador of this._jugadoresProvider.cargar_jugadores(); let i=index" (click)="listarJugadores()">
-         {{ jugador.nombre }} {{ jugador.apellidos }} ({{ jugador.elo }})
-        </button>  
-      </ion-list>
-
-
-    
-
-      <ion-fab right bottom>
-        <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
-        </ion-fab>
-
-      
-
+<ion-content padding >
+  <img src="assets/imgs/jugador.png"><br>
+      <button ion-button color="secondary" [navPush] = "jugadorlistboton">  <ion-icon name="list"></ion-icon> LISTAR JUGADOR </button>
+      <button ion-button color="secondary" [navPush] = "jugadoraddboton"> <ion-icon name="create"></ion-icon> AÑADIR JUGADOR </button>
+      <br>
 </ion-content>

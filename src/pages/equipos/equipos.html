@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Equipos</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,20 @@
 
 
 <ion-content padding>
+    <img src="assets/imgs/equipo.png"><br>
+
+    <button ion-button color="secondary" [navPush] = "hacerequipoboton"> HACER EQUIPO </button>
+
+    <ion-item ion-item *ngFor="let equipo of this._equiposProvider.cargar_equipo(); let i=index">
+        Nombre: {{ equipo.nombre }} {{ equipo.apellidos }}<br> ELO: {{ equipo.elo }} <br> Index: {{i}} <br>
+        
+           
+           
+       </ion-item>  
+
+   
+    
+
+    
 
 </ion-content>
