@@ -23,6 +23,7 @@ export class NuevaJornadaPage {
 	public viewCtrl: ViewController) {
 		this.jornadaForm = new FormBuilder().group({
 			fecha: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]{4}-[0-9]{2}-[0-9]{2}')])],
+			equipo: ['', Validators.compose([Validators.required, ])]
 		});
   }
 

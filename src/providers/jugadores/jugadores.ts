@@ -18,17 +18,15 @@ export class JugadoresProvider {
     console.log('Hello Jugadores Provider Provider');
   }
 
-  agregar_jugadores(id:number,nombre: string, apellidos: string, elo:number,telefono: number,partidas: number, 
-    pc: number,pf: number,ganadas: number, empatadas: number, perdidas: number,puntos: number){
-    
-    
-      let data = new Jugador(id,nombre,apellidos,elo,telefono,partidas,pc,pf,ganadas,empatadas,perdidas,puntos)
-
-      this._jugadores.unshift(data)
+  agregar_jugador(jugador:Jugador){
+      this._jugadores.unshift(jugador)
   }
 
   cargar_jugadores(){
     return this._jugadores
+  }
 
+  getById(jugadorId){
+	  return this._jugadores.find(jugador => jugador.id == jugadorId)
   }
 }

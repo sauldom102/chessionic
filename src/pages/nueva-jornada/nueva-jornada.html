@@ -25,7 +25,15 @@
       <ion-input type="date" formControlName="fecha" required></ion-input>
 	</ion-item>
 	<p *ngIf="jornadaForm.controls.fecha.hasError('required') && jornadaForm.controls.fecha.touched" class="error">Debes introducir una fecha</p>
-    <div padding>
+	
+	<ion-item>
+		<ion-label>Equipo</ion-label>
+		<ion-select formControlName="equipo" required>
+
+		</ion-select>
+	</ion-item>
+	
+	<div padding>
       <button type="submit" [disabled]="!jornadaForm.valid" ion-button block>Guardar</button>
     </div>
   </form>

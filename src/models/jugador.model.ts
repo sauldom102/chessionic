@@ -33,7 +33,7 @@ export class Jugador{
             this.perdidas=perdidas
             this.puntos=puntos
 
-        }
+		}
        
 
 }

@@ -25679,6 +25679,11 @@ page-jornadas ion-fab {
   margin-right: 10px;
 }
 
+page-jugadores ion-fab {
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
 page-nueva-jornada .error {
   color: #f00;
 }
