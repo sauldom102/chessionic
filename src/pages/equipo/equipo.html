@@ -1,0 +1,33 @@
+<!--
+  Generated template for the EquiposPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Equipo titular</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <img src="assets/imgs/equipo.png" /><br />
+
+    <button ion-button color="secondary" [navPush] = "hacerequipoboton"> HACER EQUIPO </button>
+
+    <ion-item ion-item *ngFor="let equipo of this._equipoProvider.cargar_equipo(); let i=index">
+        Nombre: {{ equipo.nombre }} {{ equipo.apellidos }}<br> ELO: {{ equipo.elo }} <br> Index: {{i}} <br>
+        
+           
+           
+       </ion-item>  
+
+   
+    
+
+    
+
+</ion-content>
