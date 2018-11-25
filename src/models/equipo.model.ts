@@ -17,6 +17,8 @@ export default class Equipo{
 		this.addJugador(new JugadoresProvider().getById(jugadorId))
 	}
 
+	getJugadorById = (jugadorId:number) => this.jugadores.find(jugador => jugador.id == jugadorId)
+
 	deleteJugadorById(jugadorId:number){
 		this.jugadores = this.jugadores.filter(jugador => jugador.id != jugadorId)
 	}

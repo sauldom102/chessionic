@@ -26,4 +26,6 @@ export class EquiposProvider {
     return this._equipos
   }
 
+  getByName = (name: string) => this._equipos.find(e => e.nombre == name)
+
 }

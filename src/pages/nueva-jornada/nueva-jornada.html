@@ -21,18 +21,18 @@
 <ion-content padding>
   <form [formGroup]="jornadaForm" (ngSubmit)="submitJornada(jornadaForm.value)">
     <ion-item [ngClass]="{'error-border':!jornadaForm.controls.fecha.valid && jornadaForm.controls.fecha.touched}">
-      <ion-label fixed>Fecha</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" formControlName="fecha" required></ion-datetime>
+      <ion-label fixed>Fecha*</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" max="2030" formControlName="fecha" required></ion-datetime>
 	</ion-item>
 	<p *ngIf="jornadaForm.controls.fecha.hasError('required') && jornadaForm.controls.fecha.touched" class="error">Debes introducir una fecha</p>
 	
 	<ion-item>
-		<ion-label>¿En casa?</ion-label>
+		<ion-label>¿En casa?*</ion-label>
 		<ion-checkbox formControlName="local" required></ion-checkbox>
 	</ion-item>
 
 	<ion-item>
-		<ion-label>Equipo</ion-label>
+		<ion-label>Equipo*</ion-label>
 		<ion-select formControlName="equipo" required>
 			<ion-option *ngFor="let equipo of this.equipos" value="{{ equipo.nombre }}">{{ equipo.nombre }}</ion-option>
 		</ion-select>

@@ -9,3 +9,4 @@ export { JornadasPage } from "./jornadas/jornadas";
 export { LoginPage } from "./login/login";
 export { NuevaJornadaPage } from "./nueva-jornada/nueva-jornada";
 export { JornadasDetailPage } from "./jornadas-detail/jornadas-detail";
+export { PartidasAddPage } from './partidas-add/partidas-add';

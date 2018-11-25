@@ -47,8 +47,11 @@ export class NuevaJornadaPage {
 		  data[k] = this.jornadaForm.controls[k].value
 	  })
 
-	  let jornada = new Jornada(new Date(data['fecha']), data['local'], data['equipo'])
-	  this._jornadasProvider.addJornada(jornada)
+	  let equipo = this._equiposProvider.getByName(data['equipo'])
+	  if ( equipo ){
+		let jornada = new Jornada(new Date(data['fecha']), data['local'], equipo)
+	  	this._jornadasProvider.addJornada(jornada)
+	  }
 
 	  this.exit()
   }

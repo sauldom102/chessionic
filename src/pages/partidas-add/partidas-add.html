@@ -1,0 +1,41 @@
+<!--
+  Generated template for the PartidasAddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Agregar partida a jornada {{ this.jornadaIdx + 1 }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<form [formGroup]="partidaForm" (ngSubmit)="submitPartida(partidaForm.value)">
+    
+	<ion-item>
+		<ion-label>Jugador*</ion-label>
+		<ion-select formControlName="jugador" required>
+			<ion-option *ngFor="let jugador of this.jornada.equipo.jugadores" value="{{ jugador.id }}">{{ jugador.getFullName() }}</ion-option>
+		</ion-select>
+		<p *ngIf="!partidaForm.valid">Hola</p>
+	</ion-item>
+
+	<ion-item>
+		<ion-label>Resultado*</ion-label>
+		<ion-select formControlName="resultado" required>
+			<ion-option value="por jugar">por jugar</ion-option>
+			<ion-option value="ganada">ganada</ion-option>
+			<ion-option value="empatada">empatada</ion-option>
+			<ion-option value="perdida">perdida</ion-option>
+		</ion-select>
+	</ion-item>
+	
+	<div padding>
+      <button type="submit" [disabled]="!partidaForm.valid" ion-button block>Agregar</button>
+    </div>
+  </form>
+</ion-content>

@@ -8,16 +8,30 @@ export default class Jornada{
 		this.local = local
 		this.equipo = equipo
 
-		if ( this.partidas ){
+		if ( this.partidas != null ){
 			this.partidas = partidas
 		}else{
 			this.partidas = []
 
-			this.equipo.jugadores.forEach(jugador => {
+			equipo.jugadores.forEach(jugador => {
 				this.partidas.push(new Partida(jugador, 'por jugar'))
 			})
 		}
 	}
+
+	addPartida(partida: Partida){
+		this.partidas.push(partida)
+	}
+
+	getPartidasWithResultCount = (result:"ganada" |"empatada" | "perdida" | "por jugar" = "por jugar") => {
+		return this.partidas.filter(p => p.resultado == result).length
+	}
+
+	getPartidasGanadasCount = () => this.getPartidasWithResultCount("ganada")
+
+	getPartidasEmpatadasCount = () => this.getPartidasWithResultCount("empatada")
+
+	getPartidasPerdidasCount = () => this.getPartidasWithResultCount("perdida")
 
 	getFormattedDate = () => `${this.fecha.getDate()}/${this.fecha.getMonth() + 1}/${this.fecha.getFullYear()}`
 }
