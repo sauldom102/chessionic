@@ -22,10 +22,6 @@ export class JugadoresListPage {
     console.log('ionViewDidLoad JugadoresListPage');
   }
 
-  listarJugadores(){
-    console.log(this._jugadoresProvider.cargar_jugadores())
-   }
-
    borrarJugador( id:number ){ 
 	this._jugadoresProvider.deleteById(id)
    }

@@ -13,24 +13,22 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
     <ion-list>
-        <ion-item ion-item>
-         Nombre: {{ jugador.nombre}} {{ jugador.apellidos }} <br>
-         ELO: {{ jugador.elo }} Puntos: {{ jugador.puntos }} Telefono: {{ jugador.telefono }} <br> 
-         Partidas: {{ jugador.partidas }} PC: {{ jugador.pc }}  PF: {{ jugador.pf }} <br> 
-         Ganadas: {{ jugador.ganadas }} Empatadas: {{ jugador.empatadas }} Perdidas: {{ jugador.perdidas }} <br> 
+        <ion-item>
+         ELO: {{ jugador.elo }}<br /> 
+		 Puntos: {{ jugador.puntos }}<br /> 
+         Partidas: {{ jugador.partidas }}<br />
+		 PC: {{ jugador.pc }}<br /> 
+		 PF: {{ jugador.pf }}<br /> 
+         Ganadas: {{ jugador.ganadas }}<br /> 
+		 Empatadas: {{ jugador.empatadas }}<br />
+		 Perdidas: {{ jugador.perdidas }}<br /> 
         </ion-item>  
       </ion-list>
 
       <form [formGroup]="jugadorForm" (ngSubmit)="editJugador(jugadorForm.value)">
-        
-          <!-- <ion-item>
-            <ion-label>ID</ion-label>
-            <ion-input type="number" [(ngModel)]="id" name="id" value=""></ion-input>
-          </ion-item> -->
-          
           <ion-item>
             <ion-label>Nombre</ion-label>
             <ion-input type="text" formControlName="nombre" required></ion-input>
@@ -43,8 +41,11 @@
               <ion-label>Telefono</ion-label>
               <ion-input type="number" formControlName="telefono" required></ion-input>
           </ion-item>
-  
-          <button ion-button type="submit" color="yellow"><ion-icon name="build"></ion-icon>  EDITAR JUGADOR</button>
-          <button ion-button color="primary" [navPush] = "jugadordetailsvolverboton"> VOLVER </button>
+
+		  <div padding>
+		  	<button ion-button type="submit" color="yellow"><ion-icon name="build"></ion-icon>Guardar</button>
+          	<button ion-button color="primary" [navPush] = "jugadordetailsvolverboton">Volver</button>
+		  </div>
+          
         </form>
 </ion-content>

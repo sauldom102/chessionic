@@ -17,6 +17,7 @@ export class JornadasProvider {
   constructor(private _equiposProvider: EquiposProvider) {
 	console.log('Hello JornadasProvider Provider');
 	this.addJornada(new Jornada(new Date(), true, this._equiposProvider.cargar_equipos()[0]))
+	this.addJornada(new Jornada(new Date("2018/09/23"), true, this._equiposProvider.cargar_equipos()[0]))
   }
   
   addJornada(jornada:Jornada){
@@ -24,7 +25,15 @@ export class JornadasProvider {
   }
 
   getJornadas(){
-	return this._jornadas
+	return this._jornadas.sort((j1, j2) => {
+		if ( j1.fecha < j2.fecha ){
+			return -1
+		}else if ( j1.fecha > j2.fecha ){
+			return 1
+		}
+
+		return 0
+	})
   }
 
 }

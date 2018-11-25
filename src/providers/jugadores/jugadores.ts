@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Jugador } from "../../models/jugador.model";
 import { JUGADORESINICIALES} from "../../data/data.jugadores"

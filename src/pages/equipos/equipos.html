@@ -16,15 +16,16 @@
 <ion-content>
     <img src="assets/imgs/equipo.png" /><br />
 
-    <button ion-button color="secondary" [navPush] = "hacerequipoboton"> HACER EQUIPO </button>
+	<div padding>
+	    <button ion-button color="secondary" [navPush] = "hacerequipoboton">Crear equipo</button>
+	</div>
 
-    <ion-item ion-item *ngFor="let equipo of this._equiposProvider.cargar_equipos(); let i=index">
-        Nombre: Equipo {{ equipo.nombre }}
-    </ion-item>  
-
-   
+	<ion-list>
+		<ion-card *ngFor="let equipo of this._equiposProvider.cargar_equipos(); let i=index">
+			<ion-card-content ion-item>
+				Nombre: Equipo {{ equipo.nombre }}
+			</ion-card-content>
+		</ion-card>  
+	</ion-list>
     
-
-    
-
 </ion-content>

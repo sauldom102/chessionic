@@ -34,6 +34,11 @@ export class JornadasPage {
 
   modalNewJornada(){
 	let modalNewJornada = this.modalCtrl.create(NuevaJornadaPage)
+
+	modalNewJornada.onDidDismiss(() => {
+		this.jornadas = this._jornadasProvider.getJornadas()
+	})
+
 	modalNewJornada.present()
   }
 
