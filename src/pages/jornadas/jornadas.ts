@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams, ModalController, ToastController }
 
 import { NuevaJornadaPage, JornadasDetailPage } from '../index.pages'
 import { JornadasProvider } from '../../providers/jornadas/jornadas';
+import { EquiposProvider } from '../../providers/equipos/equipos';
+import Equipo from '../../models/equipo.model';
+import { JugadoresProvider } from '../../providers/jugadores/jugadores';
 /**
  * Generated class for the JornadasPage page.
  *
@@ -21,13 +24,10 @@ import { JornadasProvider } from '../../providers/jornadas/jornadas';
 })
 export class JornadasPage {
 
-  jornadas:Jornada[]
-  
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
-	private toastCtrl: ToastController, private _jornadasProvider: JornadasProvider = new JornadasProvider()) {
-		this.jornadas = this._jornadasProvider.getJornadas()
-  }
+	private toastCtrl: ToastController, private _jornadasProvider: JornadasProvider) {
+
+	}
 
   ionViewDidLoad() {
 	console.log('ionViewDidLoad JornadasPage');
@@ -44,7 +44,7 @@ export class JornadasPage {
 	toast.onDidDismiss((data, role) => {
 		if ( role == 'close' ){
 			this._jornadasProvider.deleteJornada(jornadaIdx)
-			this.jornadas = this._jornadasProvider.getJornadas()
+			// this.jornadas = this._jornadasProvider.getJornadas()
 		}	
 	})
 	
@@ -55,7 +55,7 @@ export class JornadasPage {
 	let modalNewJornada = this.modalCtrl.create(NuevaJornadaPage)
 
 	modalNewJornada.onDidDismiss(() => {
-		this.jornadas = this._jornadasProvider.getJornadas()
+		// this.jornadas = this._jornadasProvider.getJornadas()
 	})
 
 	modalNewJornada.present()
@@ -63,7 +63,6 @@ export class JornadasPage {
 
   goToJornadaDetails(idx:number){
 	this.navCtrl.push(JornadasDetailPage, {
-		jornada: this.jornadas[idx],
 		idx
 	})
   }

@@ -19,7 +19,7 @@
 	<ion-item>
 		<ion-label>Jugador*</ion-label>
 		<ion-select formControlName="jugador" required>
-			<ion-option *ngFor="let jugador of this.jornada.equipo.jugadores" value="{{ jugador.id }}">{{ jugador.getFullName() }}</ion-option>
+			<ion-option *ngFor="let jugador of this.jornada.equipo.jugadores" value="{{ jugador.cod }}">{{ jugador.getFullName() }}</ion-option>
 		</ion-select>
 		<p *ngIf="!partidaForm.valid">Hola</p>
 	</ion-item>

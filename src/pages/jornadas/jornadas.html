@@ -20,7 +20,7 @@
 	
 
 	<ion-list>
-		<ion-card tappable class="jornada-card" *ngFor="let jornada of jornadas; let i = index" >
+		<ion-card tappable class="jornada-card" *ngFor="let jornada of _jornadasProvider.getJornadas(); let i = index" >
 			<ion-card-header (click)="goToJornadaDetails(i)">
 				Jornada {{ i + 1 }}
 			</ion-card-header>

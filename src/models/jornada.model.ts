@@ -19,6 +19,8 @@ export default class Jornada{
 		}
 	}
 
+	puntuacionTotal = () => this.partidas.map(p => p.puntuacion()).reduce((a, b) => a + b)
+
 	addPartida(partida: Partida){
 		this.partidas.push(partida)
 	}
@@ -35,5 +37,5 @@ export default class Jornada{
 
 	getFormattedDate = () => `${this.fecha.getDate()}/${this.fecha.getMonth() + 1}/${this.fecha.getFullYear()}`
 
-	participaJugador = (jugadorId: number) => this.partidas.find(p => p.jugador.id == jugadorId)
+	participaJugador = (jugadorId: number) => this.partidas.find(p => p.jugador.cod == jugadorId)
 }

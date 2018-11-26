@@ -28,23 +28,31 @@
 		<p>Partidas perdidas: {{ jornada.getPartidasPerdidasCount() }}</p>
 		<p>Partidas empatadas: {{ jornada.getPartidasEmpatadasCount() }}</p>
 
+		<p>Puntuación total: {{ jornada.puntuacionTotal() }}</p>
+
 		<h1>Partidas</h1>
 	</div>
 	
 	<ion-list>
-		<ion-card *ngFor="let partida of jornada.partidas; let i = index;">
+		<ion-card *ngFor="let partida of partidas; let i = index;">
 			<ion-card-header>
 				{{ partida.jugador.getFullName() }} contra desconocido
 			</ion-card-header>
 
-			<ion-card-content ion-item>
-				<ion-label>Resultado</ion-label>
-				<ion-select [(ngModel)]="partida.resultado">
-					<ion-option value="por jugar">por jugar</ion-option>
-					<ion-option value="ganada">ganada</ion-option>
-					<ion-option value="empatada">empatada</ion-option>
-					<ion-option value="perdida">perdida</ion-option>
-				</ion-select>
+			<ion-card-content>
+				<ion-item>
+					<ion-label>Resultado</ion-label>
+					<ion-select [(ngModel)]="partida.resultado">
+						<ion-option value="por jugar">por jugar</ion-option>
+						<ion-option value="ganada">ganada</ion-option>
+						<ion-option value="empatada">empatada</ion-option>
+						<ion-option value="perdida">perdida</ion-option>
+					</ion-select>
+				</ion-item>
+
+				<div class="buttons">
+					<button color="danger" (click)="deletePartida(i)" ion-button small><ion-icon name="trash" outline></ion-icon>Eliminar</button>
+				</div>
 			</ion-card-content>
 		</ion-card>
 	</ion-list>

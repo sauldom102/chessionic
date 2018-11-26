@@ -11,25 +11,20 @@ import { EquiposProvider } from '../equipos/equipos';
 @Injectable()
 export class JornadasProvider {
 
-  private _jornadas:Jornada[] = []
-  private _equiposProvider: EquiposProvider
+  private _jornadas:Jornada[]
   
   constructor() {
-	console.log('Hello JornadasProvider Provider');
-
-	this._equiposProvider = new EquiposProvider()
-	this.addJornada(new Jornada(new Date(), true, this._equiposProvider.cargar_equipos()[0]))
-	this.addJornada(new Jornada(new Date("2018/09/23"), true, this._equiposProvider.cargar_equipos()[0]))
+	  this._jornadas = []
   }
 
   deleteJornada(jornadaIdx:number){
-	this._jornadas = this._jornadas.filter((j, i) => i != jornadaIdx)
+	this._jornadas = this._jornadas.filter((_, i) => i != jornadaIdx)
   }
   
   addJornada(jornada:Jornada){
 	this._jornadas.push(jornada)
   }
-
+  
   getJornadas(){
 	return this._jornadas.sort((j1, j2) => {
 		if ( j1.fecha < j2.fecha ){
@@ -42,4 +37,13 @@ export class JornadasProvider {
 	})
   }
 
+  getJornadasByTeamName = (teamName: string) => this.getJornadas().filter(j => j.equipo.nombre == teamName)
+
+  getJornadasByJugadorId = (jugadorId: number) => this.getJornadas().filter(j => j.participaJugador(jugadorId))
+
+  deleteJugador = (jugadorId: number) => {
+	this.getJornadasByJugadorId(jugadorId).forEach(j => {
+		j.partidas = j.partidas.filter(p => p.jugador.cod != jugadorId)	
+	})
+  }
 }

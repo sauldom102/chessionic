@@ -18,19 +18,19 @@
 <ion-content>
 
     <ion-list>
-        <ion-card *ngFor="let jugador of this._jugadoresProvider.cargar_jugadores();">
+        <ion-card *ngFor="let jugador of _jugadoresProvider.cargar_jugadores()">
 			<ion-card-header>
 				{{ jugador.getFullName() }}
 			</ion-card-header>
 			<ion-card-content>
 				ELO: {{ jugador.elo }} <br /> Tfno: {{ jugador.telefono }}<br />
          
-				<button ion-button color="danger" (click)="borrarJugador(jugador.id)" small> 
+				<button ion-button color="danger" (click)="borrarJugador(jugador.cod)" small> 
 					<ion-icon name="trash"></ion-icon>
 					Borrar
 				</button>
 
-				<button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{'i':jugador.id}" small> 
+				<button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{'i':jugador.cod}" small> 
 					<ion-icon name="build"></ion-icon>  
 					Editar
 				</button>

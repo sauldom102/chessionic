@@ -21,7 +21,7 @@
 	</div>
 
 	<ion-list>
-		<ion-card *ngFor="let equipo of this._equiposProvider.cargar_equipos(); let i=index">
+		<ion-card *ngFor="let equipo of _equiposProvider.cargar_equipos(); let i=index">
 			<ion-card-content ion-item>
 				Nombre: Equipo {{ equipo.nombre }}
 			</ion-card-content>

@@ -1,3 +1,23 @@
 page-jornadas-detail {
+	ion-card{
+		ion-card-header.card-header{
+			padding-bottom: 0;
+		}
 
+		ion-card-content{
+			ion-item.item{
+				padding: 0;
+
+				.item-inner{
+					padding: 0;
+				}
+			}
+
+			.buttons{
+				ion-button{
+					margin: 0;
+				}
+			}
+		}
+	}
 }

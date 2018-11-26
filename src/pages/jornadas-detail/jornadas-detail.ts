@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import Jornada from '../../models/jornada.model';
 import Partida from '../../models/partida.model';
 import { PartidasAddPage } from '../partidas-add/partidas-add';
+import { JornadasProvider } from '../../providers/jornadas/jornadas';
 
 /**
  * Generated class for the JornadasDetailPage page.
@@ -20,22 +21,18 @@ export class JornadasDetailPage {
 
   idx:number
   jornada:Jornada
-  resultados:string[]
+  partidas:Partida[]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _jornadasProvider: JornadasProvider) {
 	  this.idx = this.navParams.get('idx')
-	  this.jornada = this.navParams.get('jornada')
-	  this.resultados = ['pj', 'pj', 'pj', 'pj']
+	  this.jornada = this._jornadasProvider.getJornadas()[this.idx]
+	  this.partidas = this.jornada.partidas
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad JornadasDetailPage');
+  deletePartida(i){
+	  this.partidas.splice(i, 1)
   }
-
-  ionViewDidLeave(){
-	console.log('ionViewDidLeave JornadasDetailPage');
-  }
-
+  
   addPartida(){
 	  this.navCtrl.push(PartidasAddPage, {
 		  jornada: this.jornada,

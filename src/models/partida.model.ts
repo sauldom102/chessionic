@@ -6,4 +6,13 @@ export default class Partida{
 		this.jugador = jugador
 		this.resultado = resultado
 	}
+
+	puntuacion = () : number => {
+		if ( this.resultado == 'ganada' )
+			return 1
+		else if ( this.resultado == 'empatada' )
+			return 0.5
+		
+		return 0
+	}
 }

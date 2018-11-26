@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //Servicios
 import {JugadoresProvider} from "../../providers/jugadores/jugadores";
 import { JugadoresDetailsPage } from '../jugadores-details/jugadores-details';
+import { Jugador } from '../../models/jugador.model';
 
 @IonicPage()
 @Component({
@@ -15,11 +16,6 @@ export class JugadoresListPage {
   jugadordetailsboton:any=JugadoresDetailsPage
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _jugadoresProvider:JugadoresProvider) {
-	  
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad JugadoresListPage');
   }
 
    borrarJugador( id:number ){ 
