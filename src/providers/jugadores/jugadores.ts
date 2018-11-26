@@ -3,11 +3,10 @@ import { Jugador } from "../../models/jugador.model";
 import { JUGADORESINICIALES} from "../../data/data.jugadores"
 import { EquiposProvider } from '../equipos/equipos';
 
-
 @Injectable()
 export class JugadoresProvider {
 
-  public _jugadores:Jugador[]=JUGADORESINICIALES;
+  public _jugadores:Jugador[] = JUGADORESINICIALES;
   
   constructor(private _equiposProvider: EquiposProvider = new EquiposProvider()) {
 	console.log('Hello Jugadores Provider Provider');

@@ -20,13 +20,17 @@
 	
 
 	<ion-list>
-		<ion-card tappable class="jornada-card" *ngFor="let jornada of jornadas; let i = index" (click)="goToJornadaDetails(i)">
-			<ion-card-header>
+		<ion-card tappable class="jornada-card" *ngFor="let jornada of jornadas; let i = index" >
+			<ion-card-header (click)="goToJornadaDetails(i)">
 				Jornada {{ i + 1 }}
 			</ion-card-header>
 			
 			<ion-card-content>
-				Se juega el día {{ jornada.getFormattedDate() }} {{ jornada.local ? "en casa" : "fuera" }}
+				Se juega el día {{ jornada.getFormattedDate() }} {{ jornada.local ? "en casa" : "fuera" }} <br />
+
+				<div class="buttons">
+					<button color="danger" (click)="deleteJornada(i)" ion-button small><ion-icon name="trash" outline></ion-icon>Eliminar</button>
+				</div>
 			</ion-card-content>
 		</ion-card>
 	</ion-list>

@@ -34,4 +34,6 @@ export default class Jornada{
 	getPartidasPerdidasCount = () => this.getPartidasWithResultCount("perdida")
 
 	getFormattedDate = () => `${this.fecha.getDate()}/${this.fecha.getMonth() + 1}/${this.fecha.getFullYear()}`
+
+	participaJugador = (jugadorId: number) => this.partidas.find(p => p.jugador.id == jugadorId)
 }

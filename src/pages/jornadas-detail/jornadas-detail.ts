@@ -32,6 +32,10 @@ export class JornadasDetailPage {
     console.log('ionViewDidLoad JornadasDetailPage');
   }
 
+  ionViewDidLeave(){
+	console.log('ionViewDidLeave JornadasDetailPage');
+  }
+
   addPartida(){
 	  this.navCtrl.push(PartidasAddPage, {
 		  jornada: this.jornada,

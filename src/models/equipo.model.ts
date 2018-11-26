@@ -1,6 +1,7 @@
 import { Jugador } from './jugador.model';
 
 import { JugadoresProvider } from '../providers/jugadores/jugadores'
+import { JornadasProvider } from '../providers/jornadas/jornadas';
 
 export default class Equipo{
     
@@ -26,6 +27,10 @@ export default class Equipo{
 	deleteJugador(jugador:Jugador){
 		this.deleteJugadorById(jugador.id)
 	}
+
+	getJornadas = () => new JornadasProvider().getJornadas().filter(j => j.equipo.nombre == this.nombre)
+
+	getJornadasByJugadorId = (jugadorId) => this.getJornadas().filter(j => j.participaJugador(jugadorId))
 }
 
 

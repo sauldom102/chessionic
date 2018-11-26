@@ -1,18 +1,15 @@
 
 import { Injectable } from '@angular/core';
 import Equipo from "../../models/equipo.model";
-
-//Servicios
-import { JUGADORESINICIALES } from '../../data/data.jugadores'
-
+import { JUGADORESINICIALES } from '../../data/data.jugadores';
 
 @Injectable()
 export class EquiposProvider {
 
-  private _equipos:Equipo[]= []
+  private _equipos:Equipo[] = []
 
   constructor() {
-    console.log('Hello EquiposProvider Provider');
+	console.log('Hello EquiposProvider Provider');
     this._equipos.push(new Equipo('Titular', JUGADORESINICIALES.slice(0, 4)))
   }
 
@@ -20,6 +17,10 @@ export class EquiposProvider {
 	this._equipos.forEach(equipo => {
 		equipo.deleteJugadorById(jugadorId)
 	})
+  }
+
+  getEquiposByJugadorId(jugadorId: number){
+	return this._equipos.filter(e => e.getJugadorById(jugadorId))
   }
 
   cargar_equipos(){

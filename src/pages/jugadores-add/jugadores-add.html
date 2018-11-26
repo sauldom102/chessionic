@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
     <form [formGroup]="addJugadorForm" (ngSubmit)="addJugador(addJugadorForm.value)">
         
@@ -35,7 +35,9 @@
             <ion-input type="number" formControlName="telefono"></ion-input>
         </ion-item>
 
-        <button ion-button type="submit" color="green">AÑADIR JUGADOR</button>
+		<div padding>
+			<button ion-button type="submit" color="green">Guardar</button>
+		</div>    
       </form>
 
 </ion-content>

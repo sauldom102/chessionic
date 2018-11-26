@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ToastController } from 'ionic-angular';
 
 import { NuevaJornadaPage, JornadasDetailPage } from '../index.pages'
 import { JornadasProvider } from '../../providers/jornadas/jornadas';
@@ -22,14 +22,33 @@ import { JornadasProvider } from '../../providers/jornadas/jornadas';
 export class JornadasPage {
 
   jornadas:Jornada[]
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
-	private _jornadasProvider: JornadasProvider) {
+	private toastCtrl: ToastController, private _jornadasProvider: JornadasProvider = new JornadasProvider()) {
 		this.jornadas = this._jornadasProvider.getJornadas()
   }
 
   ionViewDidLoad() {
 	console.log('ionViewDidLoad JornadasPage');
+  }
+
+  deleteJornada(jornadaIdx){
+	let toast = this.toastCtrl.create({
+        message: "Do you really want to delete this work day?",
+        duration: 5000,
+        showCloseButton: true,
+        closeButtonText: "Yes"
+	})
+
+	toast.onDidDismiss((data, role) => {
+		if ( role == 'close' ){
+			this._jornadasProvider.deleteJornada(jornadaIdx)
+			this.jornadas = this._jornadasProvider.getJornadas()
+		}	
+	})
+	
+	toast.present()
   }
 
   modalNewJornada(){

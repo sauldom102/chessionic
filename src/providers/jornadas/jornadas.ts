@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import Jornada from '../../models/jornada.model';
 import { EquiposProvider } from '../equipos/equipos';
@@ -13,11 +12,18 @@ import { EquiposProvider } from '../equipos/equipos';
 export class JornadasProvider {
 
   private _jornadas:Jornada[] = []
-
-  constructor(private _equiposProvider: EquiposProvider) {
+  private _equiposProvider: EquiposProvider
+  
+  constructor() {
 	console.log('Hello JornadasProvider Provider');
+
+	this._equiposProvider = new EquiposProvider()
 	this.addJornada(new Jornada(new Date(), true, this._equiposProvider.cargar_equipos()[0]))
 	this.addJornada(new Jornada(new Date("2018/09/23"), true, this._equiposProvider.cargar_equipos()[0]))
+  }
+
+  deleteJornada(jornadaIdx:number){
+	this._jornadas = this._jornadas.filter((j, i) => i != jornadaIdx)
   }
   
   addJornada(jornada:Jornada){

@@ -17,5 +17,13 @@ page-jornadas {
 		ion-card-header{
 			font-weight: bold;
 		}
+
+		ion-card-content{
+			.buttons{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+			}
+		}
 	}
 }

@@ -25,12 +25,12 @@
 			<ion-card-content>
 				ELO: {{ jugador.elo }} <br /> Tfno: {{ jugador.telefono }}<br />
          
-				<button ion-button color="danger" (click)="borrarJugador(jugador.id)" > 
+				<button ion-button color="danger" (click)="borrarJugador(jugador.id)" small> 
 					<ion-icon name="trash"></ion-icon>
 					Borrar
 				</button>
 
-				<button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{'i':jugador.id}"> 
+				<button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{'i':jugador.id}" small> 
 					<ion-icon name="build"></ion-icon>  
 					Editar
 				</button>

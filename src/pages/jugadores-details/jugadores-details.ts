@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JugadoresProvider } from "../../providers/jugadores/jugadores";
 import { Jugador } from "../../models/jugador.model";
 import { JugadoresListPage } from '../jugadores-list/jugadores-list';
+import { EquiposProvider } from '../../providers/equipos/equipos';
 
 
 @IonicPage()
@@ -20,23 +21,18 @@ export class JugadoresDetailsPage {
   indexJugador:number;
   jugador:Jugador;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _jugadoresProvider:JugadoresProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _jugadoresProvider:JugadoresProvider,
+	private _equiposProvider:EquiposProvider) {
 	this.indexJugador = this.navParams.get("i")
 	this.jugador = this._jugadoresProvider.getById(this.indexJugador)
 
 	this.jugadorForm = new FormBuilder().group({
 		nombre: [this.jugador.nombre, Validators.compose([Validators.required])],
 		apellidos: [this.jugador.apellidos, Validators.compose([Validators.required])],
-		telefono: [this.jugador.telefono, Validators.compose([Validators.required])],
-		elo: [this.jugador.elo, Validators.compose([Validators.required])],
-		partidas: [this.jugador.partidas, Validators.compose([Validators.required])],
-		pc: [this.jugador.pc, Validators.compose([Validators.required])],
-		pf: [this.jugador.pf, Validators.compose([Validators.required])],
-		ganadas: [this.jugador.ganadas, Validators.compose([Validators.required])],
-		empatadas: [this.jugador.empatadas, Validators.compose([Validators.required])],
-		perdidas: [this.jugador.perdidas, Validators.compose([Validators.required])],
-		puntos: [this.jugador.puntos, Validators.compose([Validators.required])]
+		telefono: [this.jugador.telefono, Validators.compose([Validators.required])]
 	})
+
+	console.log(this.jugador.partidas())
   }
 
   ionViewDidLoad() {
