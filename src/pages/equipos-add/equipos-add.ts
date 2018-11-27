@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {EquiposProvider} from "../../providers/equipos/equipos";
 
 /**
  * Generated class for the EquiposAddPage page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EquiposAddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _equiposProvider:EquiposProvider) {
   }
 
   ionViewDidLoad() {

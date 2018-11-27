@@ -14,5 +14,19 @@
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-card *ngFor="let equipo of _equiposProvider.cargar_equipos(); let i=index">
+			<ion-card-header>
+				      {{ equipo.nombre }}
+			</ion-card-header>
+			<ion-card-content>
+         Capitan: {{ equipo.jugadores[i].nombre }} {{ equipo.jugadores[i].apellidos }} <br /> Telefono: {{ equipo.jugadores[i].telefono }}<br />
+         
+        </ion-card-content>
+        
+        </ion-card>  
+
+        
+      </ion-list>
 
 </ion-content>

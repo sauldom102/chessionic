@@ -49,6 +49,7 @@ var AuthService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EquiposAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_equipos_equipos__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,6 +61,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the EquiposAddPage page.
  *
@@ -67,18 +69,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var EquiposAddPage = /** @class */ (function () {
-    function EquiposAddPage(navCtrl, navParams) {
+    function EquiposAddPage(navCtrl, navParams, _equiposProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this._equiposProvider = _equiposProvider;
     }
     EquiposAddPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad EquiposAddPage');
     };
     EquiposAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-equipos-add',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/equipos-add/equipos-add.html"*/'<!--\n  Generated template for the EquiposAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar  color="primary">\n    <ion-title>CONFIGURAR EQUIPO</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/equipos-add/equipos-add.html"*/,
+            selector: 'page-equipos-add',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\equipos-add\equipos-add.html"*/'<!--\n\n  Generated template for the EquiposAddPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar  color="primary">\n\n    <ion-title>CONFIGURAR EQUIPO</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n        <ion-card *ngFor="let equipo of _equiposProvider.cargar_equipos(); let i=index">\n\n			<ion-card-header>\n\n				      {{ equipo.nombre }}\n\n			</ion-card-header>\n\n			<ion-card-content>\n\n         Capitan: {{ equipo.jugadores[i].nombre }} {{ equipo.jugadores[i].apellidos }} <br /> Telefono: {{ equipo.jugadores[i].telefono }}<br />\n\n         \n\n        </ion-card-content>\n\n        \n\n        </ion-card>  \n\n\n\n        \n\n      </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\equipos-add\equipos-add.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_equipos_equipos__["a" /* EquiposProvider */]])
     ], EquiposAddPage);
     return EquiposAddPage;
 }());
@@ -151,7 +154,7 @@ var PartidasAddPage = /** @class */ (function () {
     };
     PartidasAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-partidas-add',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/partidas-add/partidas-add.html"*/'<!--\n  Generated template for the PartidasAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Agregar partida a jornada {{ this.jornadaIdx + 1 }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<form [formGroup]="partidaForm" (ngSubmit)="submitPartida(partidaForm.value)">\n    \n	<ion-item>\n		<ion-label>Jugador*</ion-label>\n		<ion-select formControlName="jugador" required>\n			<ion-option *ngFor="let jugador of this.jornada.equipo.jugadores" value="{{ jugador.cod }}">{{ jugador.getFullName() }}</ion-option>\n		</ion-select>\n		<p *ngIf="!partidaForm.valid">Hola</p>\n	</ion-item>\n\n	<ion-item>\n		<ion-label>Resultado*</ion-label>\n		<ion-select formControlName="resultado" required>\n			<ion-option value="por jugar">por jugar</ion-option>\n			<ion-option value="ganada">ganada</ion-option>\n			<ion-option value="empatada">empatada</ion-option>\n			<ion-option value="perdida">perdida</ion-option>\n		</ion-select>\n	</ion-item>\n	\n	<div padding>\n      <button type="submit" [disabled]="!partidaForm.valid" ion-button block>Agregar</button>\n    </div>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/partidas-add/partidas-add.html"*/,
+            selector: 'page-partidas-add',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\partidas-add\partidas-add.html"*/'<!--\n\n  Generated template for the PartidasAddPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Agregar partida a jornada {{ this.jornadaIdx + 1 }}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<form [formGroup]="partidaForm" (ngSubmit)="submitPartida(partidaForm.value)">\n\n    \n\n	<ion-item>\n\n		<ion-label>Jugador*</ion-label>\n\n		<ion-select formControlName="jugador" required>\n\n			<ion-option *ngFor="let jugador of this.jornada.equipo.jugadores" value="{{ jugador.cod }}">{{ jugador.getFullName() }}</ion-option>\n\n		</ion-select>\n\n		<p *ngIf="!partidaForm.valid">Hola</p>\n\n	</ion-item>\n\n\n\n	<ion-item>\n\n		<ion-label>Resultado*</ion-label>\n\n		<ion-select formControlName="resultado" required>\n\n			<ion-option value="por jugar">por jugar</ion-option>\n\n			<ion-option value="ganada">ganada</ion-option>\n\n			<ion-option value="empatada">empatada</ion-option>\n\n			<ion-option value="perdida">perdida</ion-option>\n\n		</ion-select>\n\n	</ion-item>\n\n	\n\n	<div padding>\n\n      <button type="submit" [disabled]="!partidaForm.valid" ion-button block>Agregar</button>\n\n    </div>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\partidas-add\partidas-add.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]])
     ], PartidasAddPage);
@@ -203,7 +206,7 @@ var JugadoresPage = /** @class */ (function () {
     };
     JugadoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jugadores',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores/jugadores.html"*/'<!--\n  Generated template for the JugadoresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Jugadores</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding >\n  <img src="assets/imgs/jugador.png" /><br/>\n      <button ion-button color="secondary" [navPush] = "jugadorlistboton" msla>  <ion-icon name="list"></ion-icon> LISTAR JUGADOR </button>\n      <button ion-button color="secondary" [navPush] = "jugadoraddboton"> <ion-icon name="create"></ion-icon> AÑADIR JUGADOR </button>\n    \n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores/jugadores.html"*/,
+            selector: 'page-jugadores',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores\jugadores.html"*/'<!--\n\n  Generated template for the JugadoresPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Jugadores</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding >\n\n  <img src="assets/imgs/jugador.png" /><br/>\n\n      <button ion-button color="secondary" [navPush] = "jugadorlistboton" msla>  <ion-icon name="list"></ion-icon> LISTAR JUGADOR </button>\n\n      <button ion-button color="secondary" [navPush] = "jugadoraddboton"> <ion-icon name="create"></ion-icon> AÑADIR JUGADOR </button>\n\n    \n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores\jugadores.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], JugadoresPage);
@@ -263,7 +266,7 @@ var JugadoresAddPage = /** @class */ (function () {
     };
     JugadoresAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jugadores-add',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-add/jugadores-add.html"*/'<!--\n  Generated template for the JugadoresAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Añadir Jugador</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <form [formGroup]="addJugadorForm" (ngSubmit)="addJugador(addJugadorForm.value)">\n        \n        <ion-item>\n          <ion-label>ID</ion-label>\n          <ion-input type="number" formControlName="id"></ion-input>\n        </ion-item>\n        \n        <ion-item>\n          <ion-label>Nombre</ion-label>\n          <ion-input type="text" formControlName="nombre"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Apellidos</ion-label>\n            <ion-input type="text" formControlName="apellidos"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Telefono</ion-label>\n            <ion-input type="number" formControlName="telefono"></ion-input>\n        </ion-item>\n\n		<div padding>\n			<button ion-button type="submit" color="green">Guardar</button>\n		</div>    \n      </form>\n\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-add/jugadores-add.html"*/,
+            selector: 'page-jugadores-add',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores-add\jugadores-add.html"*/'<!--\n\n  Generated template for the JugadoresAddPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Añadir Jugador</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n\n\n    <form [formGroup]="addJugadorForm" (ngSubmit)="addJugador(addJugadorForm.value)">\n\n        \n\n        <ion-item>\n\n          <ion-label>ID</ion-label>\n\n          <ion-input type="number" formControlName="id"></ion-input>\n\n        </ion-item>\n\n        \n\n        <ion-item>\n\n          <ion-label>Nombre</ion-label>\n\n          <ion-input type="text" formControlName="nombre"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n            <ion-label>Apellidos</ion-label>\n\n            <ion-input type="text" formControlName="apellidos"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n            <ion-label>Telefono</ion-label>\n\n            <ion-input type="number" formControlName="telefono"></ion-input>\n\n        </ion-item>\n\n\n\n		<div padding>\n\n			<button ion-button type="submit" color="green">Guardar</button>\n\n		</div>    \n\n      </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores-add\jugadores-add.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__["a" /* JugadoresProvider */]])
     ], JugadoresAddPage);
@@ -284,7 +287,7 @@ var JugadoresAddPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__jugadores_list_jugadores_list__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_jornadas_jornadas__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -342,12 +345,12 @@ var JugadoresDetailsPage = /** @class */ (function () {
     };
     JugadoresDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jugadores-details',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-details/jugadores-details.html"*/'<!--\n  Generated template for the JugadoresDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Edición</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <ion-list>\n        <ion-item>\n         ELO: {{ jugador.elo }}<br /> \n		 Puntos: {{ jugador.puntos }}<br /> \n         Partidas: {{ jugador.partidas }}<br />\n		 Partidas en casa: {{ jugador.pc }}<br /> \n		 Partidas fuera: {{ jugador.pf }}<br /> \n         Ganadas: {{ jugador.ganadas }}<br /> \n		 Empatadas: {{ jugador.empatadas }}<br />\n		 Perdidas: {{ jugador.perdidas }}<br /> \n        </ion-item>  \n      </ion-list>\n\n      <form [formGroup]="jugadorForm" (ngSubmit)="editJugador(jugadorForm.value)">\n          <ion-item>\n            <ion-label>Nombre</ion-label>\n            <ion-input type="text" formControlName="nombre" required></ion-input>\n          </ion-item>\n          <ion-item>\n              <ion-label>Apellidos</ion-label>\n              <ion-input type="text" formControlName="apellidos" required></ion-input>\n          </ion-item>\n          <ion-item>\n              <ion-label>Telefono</ion-label>\n              <ion-input type="number" formControlName="telefono" required></ion-input>\n          </ion-item>\n\n		  <div padding>\n		  	<button ion-button type="submit" color="yellow"><ion-icon name="build"></ion-icon>Guardar</button>\n          	<button ion-button color="primary" [navPush] = "jugadordetailsvolverboton">Volver</button>\n		  </div>\n          \n        </form>\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-details/jugadores-details.html"*/,
+            selector: 'page-jugadores-details',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores-details\jugadores-details.html"*/'<!--\n\n  Generated template for the JugadoresDetailsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Edición</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n\n\n    <ion-list>\n\n        <ion-item>\n\n         ELO: {{ jugador.elo }}<br /> \n\n		 Puntos: {{ jugador.puntos }}<br /> \n\n         Partidas: {{ jugador.partidas }}<br />\n\n		 Partidas en casa: {{ jugador.pc }}<br /> \n\n		 Partidas fuera: {{ jugador.pf }}<br /> \n\n         Ganadas: {{ jugador.ganadas }}<br /> \n\n		 Empatadas: {{ jugador.empatadas }}<br />\n\n		 Perdidas: {{ jugador.perdidas }}<br /> \n\n        </ion-item>  \n\n      </ion-list>\n\n\n\n      <form [formGroup]="jugadorForm" (ngSubmit)="editJugador(jugadorForm.value)">\n\n          <ion-item>\n\n            <ion-label>Nombre</ion-label>\n\n            <ion-input type="text" formControlName="nombre" required></ion-input>\n\n          </ion-item>\n\n          <ion-item>\n\n              <ion-label>Apellidos</ion-label>\n\n              <ion-input type="text" formControlName="apellidos" required></ion-input>\n\n          </ion-item>\n\n          <ion-item>\n\n              <ion-label>Telefono</ion-label>\n\n              <ion-input type="number" formControlName="telefono" required></ion-input>\n\n          </ion-item>\n\n\n\n		  <div padding>\n\n		  	<button ion-button type="submit" color="yellow"><ion-icon name="build"></ion-icon>Guardar</button>\n\n          	<button ion-button color="primary" [navPush] = "jugadordetailsvolverboton">Volver</button>\n\n		  </div>\n\n          \n\n        </form>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores-details\jugadores-details.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__["a" /* JugadoresProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__["a" /* JugadoresProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_jornadas_jornadas__["a" /* JornadasProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_jornadas_jornadas__["a" /* JornadasProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_jugadores_jugadores__["a" /* JugadoresProvider */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_jornadas_jornadas__["a" /* JornadasProvider */]])
     ], JugadoresDetailsPage);
     return JugadoresDetailsPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=jugadores-details.js.map
@@ -362,8 +365,8 @@ var JugadoresDetailsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_equipos_equipos__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_equipos_equipos__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_jornadas_jornadas__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_jornada_model__ = __webpack_require__(317);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -421,7 +424,7 @@ var NuevaJornadaPage = /** @class */ (function () {
     };
     NuevaJornadaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-nueva-jornada',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/nueva-jornada/nueva-jornada.html"*/'<!--\n  Generated template for the NuevaJornadaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Nueva jornada</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal" (click)="exit()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form [formGroup]="jornadaForm" (ngSubmit)="submitJornada(jornadaForm.value)">\n    <ion-item [ngClass]="{\'error-border\':!jornadaForm.controls.fecha.valid && jornadaForm.controls.fecha.touched}">\n      <ion-label fixed>Fecha*</ion-label>\n      <ion-datetime displayFormat="DD/MM/YYYY" max="2030" formControlName="fecha" required></ion-datetime>\n	</ion-item>\n	<p *ngIf="jornadaForm.controls.fecha.hasError(\'required\') && jornadaForm.controls.fecha.touched" class="error">Debes introducir una fecha</p>\n	\n	<ion-item>\n		<ion-label>¿En casa?*</ion-label>\n		<ion-checkbox formControlName="local" required></ion-checkbox>\n	</ion-item>\n\n	<ion-item>\n		<ion-label>Equipo*</ion-label>\n		<ion-select formControlName="equipo" required>\n			<ion-option *ngFor="let equipo of this.equipos" value="{{ equipo.nombre }}">{{ equipo.nombre }}</ion-option>\n		</ion-select>\n	</ion-item>\n	\n	<div padding>\n      <button type="submit" [disabled]="!jornadaForm.valid" ion-button block>Guardar</button>\n    </div>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/nueva-jornada/nueva-jornada.html"*/,
+            selector: 'page-nueva-jornada',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\nueva-jornada\nueva-jornada.html"*/'<!--\n\n  Generated template for the NuevaJornadaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Nueva jornada</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="royal" (click)="exit()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="jornadaForm" (ngSubmit)="submitJornada(jornadaForm.value)">\n\n    <ion-item [ngClass]="{\'error-border\':!jornadaForm.controls.fecha.valid && jornadaForm.controls.fecha.touched}">\n\n      <ion-label fixed>Fecha*</ion-label>\n\n      <ion-datetime displayFormat="DD/MM/YYYY" max="2030" formControlName="fecha" required></ion-datetime>\n\n	</ion-item>\n\n	<p *ngIf="jornadaForm.controls.fecha.hasError(\'required\') && jornadaForm.controls.fecha.touched" class="error">Debes introducir una fecha</p>\n\n	\n\n	<ion-item>\n\n		<ion-label>¿En casa?*</ion-label>\n\n		<ion-checkbox formControlName="local" required></ion-checkbox>\n\n	</ion-item>\n\n\n\n	<ion-item>\n\n		<ion-label>Equipo*</ion-label>\n\n		<ion-select formControlName="equipo" required>\n\n			<ion-option *ngFor="let equipo of this.equipos" value="{{ equipo.nombre }}">{{ equipo.nombre }}</ion-option>\n\n		</ion-select>\n\n	</ion-item>\n\n	\n\n	<div padding>\n\n      <button type="submit" [disabled]="!jornadaForm.valid" ion-button block>Guardar</button>\n\n    </div>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\nueva-jornada\nueva-jornada.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */], __WEBPACK_IMPORTED_MODULE_3__providers_equipos_equipos__["a" /* EquiposProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_jornadas_jornadas__["a" /* JornadasProvider */]])
@@ -471,11 +474,11 @@ var map = {
 		7
 	],
 	"../pages/jugadores-add/jugadores-add.module": [
-		714,
+		715,
 		6
 	],
 	"../pages/jugadores-details/jugadores-details.module": [
-		715,
+		714,
 		5
 	],
 	"../pages/jugadores-list/jugadores-list.module": [
@@ -686,7 +689,7 @@ var Jornada = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EquiposPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_equipos_equipos__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_equipos_equipos__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__equipos_add_equipos_add__ = __webpack_require__(154);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -720,7 +723,7 @@ var EquiposPage = /** @class */ (function () {
     };
     EquiposPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-equipos',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/equipos/equipos.html"*/'<!--\n  Generated template for the EquiposPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Equipos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <img src="assets/imgs/equipo.png" /><br />\n\n	<div padding>\n	    <button ion-button color="secondary" [navPush] = "hacerequipoboton">Crear equipo</button>\n	</div>\n\n	<ion-list>\n		<ion-card *ngFor="let equipo of _equiposProvider.cargar_equipos(); let i=index">\n			<ion-card-content ion-item>\n				Nombre: Equipo {{ equipo.nombre }}\n			</ion-card-content>\n		</ion-card>  \n	</ion-list>\n    \n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/equipos/equipos.html"*/,
+            selector: 'page-equipos',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\equipos\equipos.html"*/'<!--\n\n  Generated template for the EquiposPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Equipos</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n    <img src="assets/imgs/equipo.png" /><br />\n\n\n\n	<div padding>\n\n	    <button ion-button color="secondary" [navPush] = "hacerequipoboton"><ion-icon name="list"></ion-icon>GESTION EQUIPOS</button>\n\n	</div>\n\n\n\n	<ion-list>\n\n		<ion-card *ngFor="let equipo of _equiposProvider.cargar_equipos(); let i=index">\n\n			<ion-card-content ion-item>\n\n				Nombre: Equipo {{ equipo.nombre }}\n\n			</ion-card-content>\n\n		</ion-card>  \n\n	</ion-list>\n\n    \n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\equipos\equipos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_equipos_equipos__["a" /* EquiposProvider */]])
     ], EquiposPage);
@@ -739,7 +742,7 @@ var EquiposPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__partidas_add_partidas_add__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -779,12 +782,11 @@ var JornadasDetailPage = /** @class */ (function () {
     };
     JornadasDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jornadas-detail',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jornadas-detail/jornadas-detail.html"*/'<!--\n  Generated template for the JornadasDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Jornada {{ idx + 1 }}</ion-title>\n\n	<ion-buttons *ngIf="jornada.partidas.length < 7" end>\n      <button ion-button icon-only (click)="addPartida()">\n		Nueva partida\n		<ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div padding>\n		<h1>Estadísticas</h1>\n\n		<p>Partidas ganadas: {{ jornada.getPartidasGanadasCount() }}</p>\n		<p>Partidas perdidas: {{ jornada.getPartidasPerdidasCount() }}</p>\n		<p>Partidas empatadas: {{ jornada.getPartidasEmpatadasCount() }}</p>\n\n		<p>Puntuación total: {{ jornada.puntuacionTotal() }}</p>\n\n		<h1>Partidas</h1>\n	</div>\n	\n	<ion-list>\n		<ion-card *ngFor="let partida of partidas; let i = index;">\n			<ion-card-header>\n				{{ partida.jugador.getFullName() }} contra desconocido\n			</ion-card-header>\n\n			<ion-card-content>\n				<ion-item>\n					<ion-label>Resultado</ion-label>\n					<ion-select [(ngModel)]="partida.resultado">\n						<ion-option value="por jugar">por jugar</ion-option>\n						<ion-option value="ganada">ganada</ion-option>\n						<ion-option value="empatada">empatada</ion-option>\n						<ion-option value="perdida">perdida</ion-option>\n					</ion-select>\n				</ion-item>\n\n				<div class="buttons">\n					<button color="danger" (click)="deletePartida(i)" ion-button small><ion-icon name="trash" outline></ion-icon>Eliminar</button>\n				</div>\n			</ion-card-content>\n		</ion-card>\n	</ion-list>\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jornadas-detail/jornadas-detail.html"*/,
+            selector: 'page-jornadas-detail',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\jornadas-detail\jornadas-detail.html"*/'<!--\n\n  Generated template for the JornadasDetailPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Jornada {{ idx + 1 }}</ion-title>\n\n\n\n	<ion-buttons *ngIf="jornada.partidas.length < 7" end>\n\n      <button ion-button icon-only (click)="addPartida()">\n\n		Nueva partida\n\n		<ion-icon name="add"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n	<div padding>\n\n		<h1>Estadísticas</h1>\n\n\n\n		<p>Partidas ganadas: {{ jornada.getPartidasGanadasCount() }}</p>\n\n		<p>Partidas perdidas: {{ jornada.getPartidasPerdidasCount() }}</p>\n\n		<p>Partidas empatadas: {{ jornada.getPartidasEmpatadasCount() }}</p>\n\n\n\n		<p>Puntuación total: {{ jornada.puntuacionTotal() }}</p>\n\n\n\n		<h1>Partidas</h1>\n\n	</div>\n\n	\n\n	<ion-list>\n\n		<ion-card *ngFor="let partida of partidas; let i = index;">\n\n			<ion-card-header>\n\n				{{ partida.jugador.getFullName() }} contra desconocido\n\n			</ion-card-header>\n\n\n\n			<ion-card-content>\n\n				<ion-item>\n\n					<ion-label>Resultado</ion-label>\n\n					<ion-select [(ngModel)]="partida.resultado">\n\n						<ion-option value="por jugar">por jugar</ion-option>\n\n						<ion-option value="ganada">ganada</ion-option>\n\n						<ion-option value="empatada">empatada</ion-option>\n\n						<ion-option value="perdida">perdida</ion-option>\n\n					</ion-select>\n\n				</ion-item>\n\n\n\n				<div class="buttons">\n\n					<button color="danger" (click)="deletePartida(i)" ion-button small><ion-icon name="trash" outline></ion-icon>Eliminar</button>\n\n				</div>\n\n			</ion-card-content>\n\n		</ion-card>\n\n	</ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\jornadas-detail\jornadas-detail.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__["a" /* JornadasProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__["a" /* JornadasProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__["a" /* JornadasProvider */]])
     ], JornadasDetailPage);
     return JornadasDetailPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=jornadas-detail.js.map
@@ -799,7 +801,7 @@ var JornadasDetailPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_pages__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -854,7 +856,7 @@ var JornadasPage = /** @class */ (function () {
     };
     JornadasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jornadas',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jornadas/jornadas.html"*/'<!--\n  Generated template for the JornadasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n	<ion-title>Jornadas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="header-img-container">\n		<img class="header-img" src="assets/imgs/jornadas.png">\n	</div>\n	\n\n	<ion-list>\n		<ion-card tappable class="jornada-card" *ngFor="let jornada of _jornadasProvider.getJornadas(); let i = index" >\n			<ion-card-header (click)="goToJornadaDetails(i)">\n				Jornada {{ i + 1 }}\n			</ion-card-header>\n			\n			<ion-card-content>\n				Se juega el día {{ jornada.getFormattedDate() }} {{ jornada.local ? "en casa" : "fuera" }} <br />\n\n				<div class="buttons">\n					<button color="danger" (click)="deleteJornada(i)" ion-button small><ion-icon name="trash" outline></ion-icon>Eliminar</button>\n				</div>\n			</ion-card-content>\n		</ion-card>\n	</ion-list>\n\n	<ion-fab right bottom>\n		<button ion-fab color="secondary" (click)="modalNewJornada()"><ion-icon name="add"></ion-icon></button>\n	  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jornadas/jornadas.html"*/,
+            selector: 'page-jornadas',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\jornadas\jornadas.html"*/'<!--\n\n  Generated template for the JornadasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n	<ion-title>Jornadas</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n	<div class="header-img-container">\n\n		<img class="header-img" src="assets/imgs/jornadas.png">\n\n	</div>\n\n	\n\n\n\n	<ion-list>\n\n		<ion-card tappable class="jornada-card" *ngFor="let jornada of _jornadasProvider.getJornadas(); let i = index" >\n\n			<ion-card-header (click)="goToJornadaDetails(i)">\n\n				Jornada {{ i + 1 }}\n\n			</ion-card-header>\n\n			\n\n			<ion-card-content>\n\n				Se juega el día {{ jornada.getFormattedDate() }} {{ jornada.local ? "en casa" : "fuera" }} <br />\n\n\n\n				<div class="buttons">\n\n					<button color="danger" (click)="deleteJornada(i)" ion-button small><ion-icon name="trash" outline></ion-icon>Eliminar</button>\n\n				</div>\n\n			</ion-card-content>\n\n		</ion-card>\n\n	</ion-list>\n\n\n\n	<ion-fab right bottom>\n\n		<button ion-fab color="secondary" (click)="modalNewJornada()"><ion-icon name="add"></ion-icon></button>\n\n	  </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\jornadas\jornadas.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_jornadas_jornadas__["a" /* JornadasProvider */]])
@@ -915,7 +917,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n	\n<ion-content padding>\n	<form (ngSubmit)="submitLogin()">\n		<ion-item>\n			<ion-label floating>Usuario</ion-label>\n			<ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>\n		</ion-item>\n		<ion-item>\n			<ion-label floating>Contraseña</ion-label>\n			<ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>\n		</ion-item>\n		<div padding>\n			<button type="submit" ion-button outline block>Entrar</button>\n		</div>\n	</form>\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n	\n\n<ion-content padding>\n\n	<form (ngSubmit)="submitLogin()">\n\n		<ion-item>\n\n			<ion-label floating>Usuario</ion-label>\n\n			<ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label floating>Contraseña</ion-label>\n\n			<ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>\n\n		</ion-item>\n\n		<div padding>\n\n			<button type="submit" ion-button outline block>Entrar</button>\n\n		</div>\n\n	</form>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
     ], LoginPage);
@@ -960,8 +962,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__firebaseConfig__ = __webpack_require__(709);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_auth_service__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_jugadores_jugadores__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_equipos_equipos__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_equipos_equipos__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_jornadas_jornadas__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1011,8 +1013,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/equipos/equipos.module#EquiposPageModule', name: 'EquiposPage', segment: 'equipos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/jornadas-detail/jornadas-detail.module#JornadasDetailPageModule', name: 'JornadasDetailPage', segment: 'jornadas-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/jornadas/jornadas.module#JornadasPageModule', name: 'JornadasPage', segment: 'jornadas', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/jugadores-add/jugadores-add.module#JugadoresAddPageModule', name: 'JugadoresAddPage', segment: 'jugadores-add', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/jugadores-details/jugadores-details.module#JugadoresDetailsPageModule', name: 'JugadoresDetailsPage', segment: 'jugadores-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/jugadores-add/jugadores-add.module#JugadoresAddPageModule', name: 'JugadoresAddPage', segment: 'jugadores-add', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/jugadores-list/jugadores-list.module#JugadoresListPageModule', name: 'JugadoresListPage', segment: 'jugadores-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/jugadores/jugadores.module#JugadoresPageModule', name: 'JugadoresPage', segment: 'jugadores', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
@@ -1057,7 +1059,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 42:
+/***/ 38:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1119,13 +1121,13 @@ var JornadasProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 57:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EquiposProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jornadas_jornadas__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1174,8 +1176,8 @@ var EquiposProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JugadoresProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__equipos_equipos__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__equipos_equipos__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__jornadas_jornadas__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1231,10 +1233,9 @@ var JugadoresProvider = /** @class */ (function () {
     };
     JugadoresProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__equipos_equipos__["a" /* EquiposProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__equipos_equipos__["a" /* EquiposProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__jornadas_jornadas__["a" /* JornadasProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__jornadas_jornadas__["a" /* JornadasProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__equipos_equipos__["a" /* EquiposProvider */], __WEBPACK_IMPORTED_MODULE_2__jornadas_jornadas__["a" /* JornadasProvider */]])
     ], JugadoresProvider);
     return JugadoresProvider;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=jugadores.js.map
@@ -1252,10 +1253,10 @@ var JugadoresProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_index_pages__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_equipos_equipos__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_equipos_equipos__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_equipo_model__ = __webpack_require__(706);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_jugadores_jugadores__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_jornadas_jornadas__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_jornadas_jornadas__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_jornada_model__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__data_data_jugadores__ = __webpack_require__(707);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1307,7 +1308,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_6__providers_equipos_equipos__["a" /* EquiposProvider */],
             __WEBPACK_IMPORTED_MODULE_8__providers_jugadores_jugadores__["a" /* JugadoresProvider */], __WEBPACK_IMPORTED_MODULE_9__providers_jornadas_jornadas__["a" /* JornadasProvider */]])
@@ -1358,9 +1359,9 @@ var Equipo = /** @class */ (function () {
 var JUGADORESINICIALES = [
     new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](0, 'Antonio', 'Ruiz Ortega', 661123456, 100),
     new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](1, 'Manuel', 'Perez Matos', 678342178, 200),
-    new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](2, 'Pedro', 'Sanchez Castejon', 956456823, 50),
+    new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](2, 'Pedro', 'Sanchez Castejon', 956456823, 225),
     new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](3, 'Maria Dolores', 'Cospedal', 956882245, 250),
-    new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](4, 'Rita', 'Maestre', 678340981, 400)
+    new __WEBPACK_IMPORTED_MODULE_0__models_jugador_model__["a" /* Jugador */](4, 'Rita', 'Maestre', 678340982, 400)
 ];
 //# sourceMappingURL=data.jugadores.js.map
 
@@ -1461,7 +1462,7 @@ var JugadoresListPage = /** @class */ (function () {
     };
     JugadoresListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jugadores-list',template:/*ion-inline-start:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-list/jugadores-list.html"*/'<!--\n  Generated template for the JugadoresListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Listar Jugadores</ion-title>\n  </ion-navbar>\n\n  \n\n</ion-header>\n\n\n<ion-content>\n\n    <ion-list>\n        <ion-card *ngFor="let jugador of _jugadoresProvider.cargar_jugadores()">\n			<ion-card-header>\n				{{ jugador.getFullName() }}\n			</ion-card-header>\n			<ion-card-content>\n				ELO: {{ jugador.elo }} <br /> Tfno: {{ jugador.telefono }}<br />\n         \n				<button ion-button color="danger" (click)="borrarJugador(jugador.cod)" small> \n					<ion-icon name="trash"></ion-icon>\n					Borrar\n				</button>\n\n				<button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{\'i\':jugador.cod}" small> \n					<ion-icon name="build"></ion-icon>  \n					Editar\n				</button>\n			</ion-card-content>   \n        </ion-card>  \n      </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/media/DATA/DAM/Colegio/Segundo/Ionic/chessionic/src/pages/jugadores-list/jugadores-list.html"*/,
+            selector: 'page-jugadores-list',template:/*ion-inline-start:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores-list\jugadores-list.html"*/'<!--\n\n  Generated template for the JugadoresListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Listar Jugadores</ion-title>\n\n  </ion-navbar>\n\n\n\n  \n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n\n\n    <ion-list>\n\n        <ion-card *ngFor="let jugador of _jugadoresProvider.cargar_jugadores()">\n\n			<ion-card-header>\n\n				{{ jugador.getFullName() }}\n\n			</ion-card-header>\n\n			<ion-card-content>\n\n				ELO: {{ jugador.elo }} <br /> Tfno: {{ jugador.telefono }}<br />\n\n         \n\n				<button ion-button color="danger" (click)="borrarJugador(jugador.cod)" small> \n\n					<ion-icon name="trash"></ion-icon>\n\n					Borrar\n\n				</button>\n\n\n\n				<button ion-button color="yellow" [navPush] = "jugadordetailsboton" [navParams]="{\'i\':jugador.cod}" small> \n\n					<ion-icon name="build"></ion-icon>  \n\n					Editar\n\n				</button>\n\n			</ion-card-content>   \n\n        </ion-card>  \n\n      </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Proyectos\Ionic\chessionic\src\pages\jugadores-list\jugadores-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_jugadores_jugadores__["a" /* JugadoresProvider */]])
     ], JugadoresListPage);
