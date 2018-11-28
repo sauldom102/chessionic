@@ -50,6 +50,7 @@ export class JugadoresDetailsPage {
 	this.jugadorForm = new FormBuilder().group({
 		nombre: [this.jugador.nombre, Validators.compose([Validators.required])],
 		apellidos: [this.jugador.apellidos, Validators.compose([Validators.required])],
+		elo: [this.jugador.elo, Validators.compose([Validators.required])],
 		telefono: [this.jugador.telefono, Validators.compose([Validators.required])]
 	})
   }

@@ -22,6 +22,7 @@ export class JugadoresAddPage {
 		id: ['', Validators.compose([Validators.required])],
 		nombre: ['', Validators.compose([Validators.required])],
 		apellidos: ['', Validators.compose([Validators.required])],
+		elo: ['', Validators.compose([Validators.required])],
 		telefono: ['', Validators.compose([Validators.required])],
 	})
   }
@@ -35,6 +36,7 @@ export class JugadoresAddPage {
 		this.addJugadorForm.controls['id'].value,
 		this.addJugadorForm.controls['nombre'].value,
 		this.addJugadorForm.controls['apellidos'].value,
+		this.addJugadorForm.controls['elo'].value,
 		this.addJugadorForm.controls['telefono'].value
 	)
 	this._jugadoresProvider.addJugador(jugador)
